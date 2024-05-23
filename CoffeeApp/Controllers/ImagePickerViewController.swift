@@ -105,11 +105,12 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
                 uploadBtnOutlet.isEnabled = true
                 i = images.count
             }
+           
         }
         }
     
     func initialzeUpload(completion: @escaping (()->Void)){
-        uploadBtnOutlet.isEnabled = false
+      
         let cell = imageViewCvOutelet.cellForItem(at: IndexPath(row: i, section: 0)) as? ImageLoaderCell
         cell?.loaderOutlet.startAnimating()
         if let data = cell?.imageViewOutlet.image?.pngData() {
@@ -121,15 +122,15 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
                         }
                     }
             uploadTask.observe(.progress) { snapshot in
-                let process = Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount)
-                print("Upload progress: \(process * 100)%")
-                cell?.percentageOutlet.text = ("\(process * 100)")
-                cell?.reloadInputViews()
-                
+                    let process = Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount)
+                    print("Upload progress: \(process * 100)%")
+                    cell?.percentageOutlet.text = ("\(process * 100)")
+                    cell?.reloadInputViews()
             }
             uploadTask.observe(.success){ snapshot in
                 DispatchQueue.main.async{
                     cell?.loaderOutlet.stopAnimating()
+                    cell?.percentageOutlet.isHidden = true
                     completion()
                 }
                 
