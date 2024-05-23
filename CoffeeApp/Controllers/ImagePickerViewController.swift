@@ -18,6 +18,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     
     @IBOutlet weak var imageViewCvOutelet: UICollectionView!
     
+    @IBOutlet weak var uploadBtnOutlet: UIButton!
     var images = [UIImage]()
     var selected = [Int]()
     var viewModel = ImagePickerViewModel()
@@ -101,12 +102,14 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
                 uploadImages()
             }
             else {
+                uploadBtnOutlet.isEnabled = true
                 i = images.count
             }
         }
         }
     
     func initialzeUpload(completion: @escaping (()->Void)){
+        uploadBtnOutlet.isEnabled = false
         let cell = imageViewCvOutelet.cellForItem(at: IndexPath(row: i, section: 0)) as? ImageLoaderCell
         cell?.loaderOutlet.startAnimating()
         if let data = cell?.imageViewOutlet.image?.pngData() {
