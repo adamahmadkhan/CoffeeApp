@@ -32,6 +32,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
         super.viewDidLoad()
         self.imageViewCvOutelet.allowsMultipleSelection = true
         self.imageViewCvOutelet.register(UINib(nibName: "ImageLoaderCell" , bundle: nil), forCellWithReuseIdentifier: "imageLoaderCells")
+        uploadBtnOutlet.isEnabled = false
         viewModel.isLoading.bind { data in
             //self.imageViewCvOutelet.reloadData()
         }
@@ -64,6 +65,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
                 
             }
         }
+        uploadBtnOutlet.isEnabled = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -94,48 +96,47 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     @IBAction func uploadBtnPressed(_ sender: Any) {
         uploadImages()
     }
-    func uploadImages(){
-        
+    
+    func uploadImages() {
         initialzeUpload { [self] in
-            if i + 1 < images.count{
+            if i + 1 < images.count {
                 i = i + 1
                 uploadImages()
             }
             else {
-                uploadBtnOutlet.isEnabled = true
                 i = images.count
+                return  uploadBtnOutlet.isEnabled = true
             }
-           
+            
         }
-        }
+    }
     
     func initialzeUpload(completion: @escaping (()->Void)){
-      
+        uploadBtnOutlet.isEnabled = false
         let cell = imageViewCvOutelet.cellForItem(at: IndexPath(row: i, section: 0)) as? ImageLoaderCell
         cell?.loaderOutlet.startAnimating()
         if let data = cell?.imageViewOutlet.image?.pngData() {
-                let path = Int.random(in:  0..<100)
-                    let imageRef = storageRef.child("Custom Images/photoId: \(path).png")
-                   let uploadTask = imageRef.putData(data, metadata: nil) { (metadata, error) in
-                        if let error = error {
-                            print("Error uploading image: \(error)")
-                        }
-                    }
+            let path = Int.random(in:  0..<100)
+            let imageRef = storageRef.child("Custom Images/photoId: \(path).png")
+            let uploadTask = imageRef.putData(data, metadata: nil) { (metadata, error) in
+                if let error = error {
+                    print("Error uploading image: \(error)")
+                }
+            }
             uploadTask.observe(.progress) { snapshot in
-                    let process = Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount)
-                    print("Upload progress: \(process * 100)%")
-                    cell?.percentageOutlet.text = ("\(process * 100)")
-                    cell?.reloadInputViews()
+                let process = Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount)
+                print("Upload progress: \(process * 100)%")
+                cell?.percentageOutlet.text = ("\(Int(process * 100))")
+                cell?.reloadInputViews()
             }
             uploadTask.observe(.success){ snapshot in
                 DispatchQueue.main.async{
                     cell?.loaderOutlet.stopAnimating()
-                    cell?.percentageOutlet.isHidden = true
                     completion()
                 }
                 
             }
-                }
-            }
         }
+    }
+}
 
