@@ -13,8 +13,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        let loginController = self.storyboard?.instantiateViewController(identifier: "GettingStartedViewController") as! GettingStartedViewController
 //        self.navigationController?.pushViewController(loginController, animated: true)
-        let gettingStartedViewController = storyboard?.instantiateViewController(identifier:"GettingStartedViewController") as! GettingStartedViewController
-        navigationController?.pushViewController(gettingStartedViewController, animated: true)
+//        let gettingStartedViewController = storyboard?.instantiateViewController(identifier:"GettingStartedViewController") as! GettingStartedViewController
+//        navigationController?.pushViewController(gettingStartedViewController, animated: true)
+        let homeTabViewController = storyboard?.instantiateViewController(identifier:"homeTabBarController") as! UITabBarController
+        navigationController?.pushViewController(homeTabViewController, animated: true)
 
         
     }

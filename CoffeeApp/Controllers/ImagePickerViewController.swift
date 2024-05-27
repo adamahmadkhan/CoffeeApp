@@ -9,13 +9,14 @@ import UIKit
 import PhotosUI
 import FirebaseFirestore
 import FirebaseStorage
+import Reachability
 
 class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     
     
     
-    
+    //MARK: Outlets
     @IBOutlet weak var imageViewCvOutelet: UICollectionView!
     @IBOutlet weak var galleryBtnOutlet: UIButton!
     @IBOutlet weak var uploadBtnOutlet: UIButton!
@@ -28,6 +29,11 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             }
         }
     }
+    
+    
+    
+    //MARK: Variables
+    let reachability = try! Reachability()
     var selected = [Int]()
     var viewModel = ImagePickerViewModel()
     //    var selectedImages  = [UIImage]()
@@ -38,15 +44,17 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageViewCvOutelet.allowsMultipleSelection = true
-        self.imageViewCvOutelet.register(UINib(nibName: "ImageLoaderCell" , bundle: nil), forCellWithReuseIdentifier: "imageLoaderCells")
-        uploadBtnOutlet.isEnabled = false
-        viewModel.isLoading.bind { data in
-            //self.imageViewCvOutelet.reloadData()
-        }
+        initializeController()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        monitorConnection()
     }
     
     
+    
+    
+    //MARK: Image pickers Functions
     @IBAction func galleryButtonPressed(_ sender: UIButton) {
         configureImagePicker()
     }
@@ -65,17 +73,18 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             result.itemProvider.loadObject(ofClass: UIImage.self) { [self] object, error in
                 if let image = object as? UIImage  {
                     if !images.contains(where: { $0.pngData() == image.pngData() }) {
-                            images.append(image)
-                        }
+                        images.append(image)
+                    }
                 }
                 DispatchQueue.main.async {
-                self.imageViewCvOutelet.reloadData()
-                
-            }
+                    self.imageViewCvOutelet.reloadData()
+                    
+                }
             }
         }
     }
     
+    //MARK: ConnectionView Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         images.count
     }
@@ -101,12 +110,13 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
         //       }
     }
     
+    
+    //MARK: Upload and firebase Functions
     @IBAction func uploadBtnPressed(_ sender: Any) {
         uploadBtnOutlet.isEnabled = false
         galleryBtnOutlet.isEnabled = false
         uploadImages()
     }
-    
     func uploadImages() {
         initialzeUpload { [self] in
             if i + 1 < images.count {
@@ -145,12 +155,49 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             }
             uploadTask.observe(.success){ snapshot in
                 DispatchQueue.main.async{
-                   // cell?.loaderOutlet.stopAnimating()
+                    // cell?.loaderOutlet.stopAnimating()
+                    cell?.progressBar.isHidden  = true
+                    cell?.percentageOutlet.isHidden = true
                     completion()
                 }
                 
             }
         }
     }
-}
+    
+    func monitorConnection(){
+        let alert = UIAlertController(title: "Alert", message: "Check Internet", preferredStyle: .alert)
+        DispatchQueue.main.async { [self] in
+            
+            
+            reachability.whenReachable = { _ in
+                self.dismiss(animated: true) {
+                    self.uploadImages()
+                }
+            }
+            
+            
+            reachability.whenUnreachable = { _ in
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            
+            do {
+                try reachability.startNotifier()
+            } catch {
+                print("Unable to start notifier")
+            }
+            
+        }
+    }
+        func initializeController(){
+            self.imageViewCvOutelet.allowsMultipleSelection = true
+            self.imageViewCvOutelet.register(UINib(nibName: "ImageLoaderCell" , bundle: nil), forCellWithReuseIdentifier: "imageLoaderCells")
+            uploadBtnOutlet.isEnabled = false
+            viewModel.isLoading.bind { data in
+                //self.imageViewCvOutelet.reloadData()
+            }
+        }
+        
+    }
 

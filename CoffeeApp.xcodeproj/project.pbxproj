@@ -74,6 +74,7 @@
 		A06E90392BFF1708004A1097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E90382BFF1708004A1097 /* SceneDelegate.swift */; };
 		A06E90412BFF1708004A1097 /* CoffeeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A06E903F2BFF1708004A1097 /* CoffeeApp.xcdatamodeld */; };
 		A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06E90442BFF170A004A1097 /* LaunchScreen.storyboard */; };
+		A0FC1C8F2C04A40D00A32B2B /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = A0FC1C8E2C04A40D00A32B2B /* Reachability */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,7 @@
 				A02E645F2BFF26B4004526EA /* SDWebImage in Frameworks */,
 				A00B35F42BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				A00B361A2BFF1E35008B9A63 /* FirebaseMLModelDownloader in Frameworks */,
+				A0FC1C8F2C04A40D00A32B2B /* Reachability in Frameworks */,
 				A00B363D2BFF1FCC008B9A63 /* GoogleSignIn in Frameworks */,
 				A00B360E2BFF1E35008B9A63 /* FirebaseFirestoreSwift in Frameworks */,
 				A00B35FA2BFF1E35008B9A63 /* FirebaseAppCheck in Frameworks */,
@@ -307,6 +309,7 @@
 				A02E645B2BFF261F004526EA /* JGProgressHUD */,
 				A02E645E2BFF26B4004526EA /* SDWebImage */,
 				A02E64602BFF26B4004526EA /* SDWebImageMapKit */,
+				A0FC1C8E2C04A40D00A32B2B /* Reachability */,
 			);
 			productName = CoffeeApp;
 			productReference = A06E90332BFF1707004A1097 /* CoffeeApp.app */;
@@ -345,6 +348,7 @@
 				A00B36402BFF215C008B9A63 /* XCRemoteSwiftPackageReference "EasyStash" */,
 				A02E645A2BFF261F004526EA /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				A02E645D2BFF26B4004526EA /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				A0FC1C8D2C04A40D00A32B2B /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = A06E90342BFF1707004A1097 /* Products */;
 			projectDirPath = "";
@@ -686,6 +690,14 @@
 				minimumVersion = 5.19.2;
 			};
 		};
+		A0FC1C8D2C04A40D00A32B2B /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -873,6 +885,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A02E645D2BFF26B4004526EA /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		A0FC1C8E2C04A40D00A32B2B /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0FC1C8D2C04A40D00A32B2B /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 
