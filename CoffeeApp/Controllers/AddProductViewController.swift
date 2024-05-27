@@ -55,7 +55,7 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
             viewModel.addCloudData(imageData: data)
             viewModel.getAllProducts { error, products in
                 if error == nil {
-//                    print(products!)
+                    print(products!)
                 }
             }
         }
