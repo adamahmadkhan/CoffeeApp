@@ -56,13 +56,14 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
         for result in results {
             result.itemProvider.loadObject(ofClass: UIImage.self) { [self] object, error in
                 if let image = object as? UIImage  {
-                    images.append(image)
-                    print(image)
+                    if !images.contains(where: { $0.pngData() == image.pngData() }) {
+                            images.append(image)
+                        }
                 }
                 DispatchQueue.main.async {
-                    self.imageViewCvOutelet.reloadData()
-                }
+                self.imageViewCvOutelet.reloadData()
                 
+            }
             }
         }
         uploadBtnOutlet.isEnabled = true
@@ -124,10 +125,13 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
                 }
             }
             uploadTask.observe(.progress) { snapshot in
-                let process = Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount)
-                print("Upload progress: \(process * 100)%")
-                cell?.percentageOutlet.text = ("\(Int(process * 100))")
-                cell?.reloadInputViews()
+                DispatchQueue.main.async {
+                    let process = Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount)
+                    print("Upload progress: \(process * 100)%")
+                    cell?.percentageOutlet.text = ("\(Int(process * 100))")
+                    cell?.progressBar.progress = process
+                    cell?.reloadInputViews()
+                }
             }
             uploadTask.observe(.success){ snapshot in
                 DispatchQueue.main.async{

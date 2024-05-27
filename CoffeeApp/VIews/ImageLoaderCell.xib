@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,13 +38,21 @@
                                 <color key="textColor" red="0.9193766713" green="0.3028941751" blue="0.2391715348" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JgD-eV-fnC">
+                                <rect key="frame" x="5" y="10" width="284" height="4"/>
+                                <color key="progressTintColor" systemColor="systemGreenColor"/>
+                                <color key="trackTintColor" red="0.9193766713" green="0.3028941751" blue="0.2391715348" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="eeR-Od-j7Y" secondAttribute="trailing" constant="5" id="9vz-VQ-lrL"/>
                             <constraint firstItem="WnG-vc-POg" firstAttribute="top" secondItem="hyy-2L-2aM" secondAttribute="top" constant="10" id="CYe-ZO-N5c"/>
+                            <constraint firstItem="JgD-eV-fnC" firstAttribute="top" secondItem="hyy-2L-2aM" secondAttribute="top" constant="10" id="LTD-L5-nGA"/>
                             <constraint firstAttribute="bottom" secondItem="eeR-Od-j7Y" secondAttribute="bottom" id="WWw-cm-hMS"/>
                             <constraint firstAttribute="trailing" secondItem="WnG-vc-POg" secondAttribute="trailing" constant="8" id="hb1-vi-prE"/>
+                            <constraint firstItem="JgD-eV-fnC" firstAttribute="leading" secondItem="eeR-Od-j7Y" secondAttribute="leading" id="sSu-hn-7VY"/>
+                            <constraint firstItem="JgD-eV-fnC" firstAttribute="trailing" secondItem="eeR-Od-j7Y" secondAttribute="trailing" id="smK-EY-p2j"/>
                             <constraint firstItem="eeR-Od-j7Y" firstAttribute="leading" secondItem="hyy-2L-2aM" secondAttribute="leading" constant="5" id="tuS-k4-njY"/>
                         </constraints>
                     </view>
@@ -62,6 +71,7 @@
                 <outlet property="loaderOutlet" destination="WnG-vc-POg" id="11h-Nm-KFf"/>
                 <outlet property="mainViewOutlet" destination="hyy-2L-2aM" id="XcC-a0-0oB"/>
                 <outlet property="percentageOutlet" destination="tUO-Pg-Eot" id="vPf-Zt-i6h"/>
+                <outlet property="progressBar" destination="JgD-eV-fnC" id="T5b-si-e1P"/>
             </connections>
             <point key="canvasLocation" x="71.755725190839698" y="66.197183098591552"/>
         </collectionViewCell>
@@ -69,6 +79,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

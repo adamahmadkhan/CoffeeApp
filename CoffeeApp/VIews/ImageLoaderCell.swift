@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import FirebaseFirestore
-import FirebaseStorage
+
 
 
 
@@ -16,6 +15,7 @@ class ImageLoaderCell: UICollectionViewCell {
     
     
     
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var mainViewOutlet: UIView!
     @IBOutlet weak var loaderOutlet: UIActivityIndicatorView!
     @IBOutlet weak var imageViewOutlet: UIImageView!
@@ -23,8 +23,6 @@ class ImageLoaderCell: UICollectionViewCell {
     @IBOutlet weak var percentageOutlet: UILabel!
 
     
-    let storageRef = Storage.storage().reference()
-    var reloadItem: (()-> Void)?
     
     
     
