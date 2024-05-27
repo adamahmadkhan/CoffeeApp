@@ -156,6 +156,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Icon (2)" id="egN-r8-O4D"/>
                     <connections>
+                        <outlet property="galleryBtnOutlet" destination="Cti-01-mfD" id="Q5N-Ng-kit"/>
                         <outlet property="imageViewCvOutelet" destination="Yai-Am-S30" id="CXc-sU-BXm"/>
                         <outlet property="uploadBtnOutlet" destination="3sD-as-f9V" id="IhP-0M-2Ke"/>
                     </connections>

@@ -17,9 +17,17 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     
     
     @IBOutlet weak var imageViewCvOutelet: UICollectionView!
-    
+    @IBOutlet weak var galleryBtnOutlet: UIButton!
     @IBOutlet weak var uploadBtnOutlet: UIButton!
-    var images = [UIImage]()
+    var images = [UIImage]() {
+        didSet  {
+            if oldValue.count < images.count {
+                DispatchQueue.main.async { [self] in
+                    uploadBtnOutlet.isEnabled = true
+                }
+            }
+        }
+    }
     var selected = [Int]()
     var viewModel = ImagePickerViewModel()
     //    var selectedImages  = [UIImage]()
@@ -66,7 +74,6 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             }
             }
         }
-        uploadBtnOutlet.isEnabled = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -95,6 +102,8 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     }
     
     @IBAction func uploadBtnPressed(_ sender: Any) {
+        uploadBtnOutlet.isEnabled = false
+        galleryBtnOutlet.isEnabled = false
         uploadImages()
     }
     
@@ -106,16 +115,17 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             }
             else {
                 i = images.count
-                return  uploadBtnOutlet.isEnabled = true
+                return {
+                    galleryBtnOutlet.isEnabled = true
+                }()
             }
             
         }
     }
     
     func initialzeUpload(completion: @escaping (()->Void)){
-        uploadBtnOutlet.isEnabled = false
         let cell = imageViewCvOutelet.cellForItem(at: IndexPath(row: i, section: 0)) as? ImageLoaderCell
-        cell?.loaderOutlet.startAnimating()
+        //cell?.loaderOutlet.startAnimating()
         if let data = cell?.imageViewOutlet.image?.pngData() {
             let path = Int.random(in:  0..<100)
             let imageRef = storageRef.child("Custom Images/photoId: \(path).png")
@@ -135,7 +145,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             }
             uploadTask.observe(.success){ snapshot in
                 DispatchQueue.main.async{
-                    cell?.loaderOutlet.stopAnimating()
+                   // cell?.loaderOutlet.stopAnimating()
                     completion()
                 }
                 

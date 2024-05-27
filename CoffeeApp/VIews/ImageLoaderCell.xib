@@ -38,8 +38,8 @@
                                 <color key="textColor" red="0.9193766713" green="0.3028941751" blue="0.2391715348" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JgD-eV-fnC">
-                                <rect key="frame" x="5" y="10" width="284" height="4"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="JgD-eV-fnC">
+                                <rect key="frame" x="5" y="10" width="284" height="2.6666666666666679"/>
                                 <color key="progressTintColor" systemColor="systemGreenColor"/>
                                 <color key="trackTintColor" red="0.9193766713" green="0.3028941751" blue="0.2391715348" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
