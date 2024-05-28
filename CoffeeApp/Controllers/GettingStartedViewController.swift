@@ -30,10 +30,11 @@ class GettingStartedViewController: UIViewController {
     
     @IBAction func getStartedBtnPressed(_ sender: UIButton) {
         let AuthScreenController = self.storyboard?.instantiateViewController(identifier: "AuthScreenViewController" ) as! AuthScreenViewController
+        self.navigationController?.pushViewController(AuthScreenController, animated: true)
 //        let data = [["name":"Coffee tea","price":3.7,"category":"tea"],["name":"dark tea","price":4.7,"category":"tea"],["new name":"Coffee tea","price":3.7,"category":"tea"],["price":4.7,"category":"tea"]] as [[String : Any]]
 //        
 //        firebaseReference.childByAutoId().updateChildValues(["coffee":data])
-        self.navigationController?.pushViewController(AuthScreenController, animated: true)
+        
         }
     
     

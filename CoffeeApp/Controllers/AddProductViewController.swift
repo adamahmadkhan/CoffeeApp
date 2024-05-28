@@ -16,7 +16,7 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
     @IBOutlet weak var nameTfOutlet: UITextField!
     @IBOutlet weak var priceTfOutlet: UITextField!
     @IBOutlet weak var uploadedImage: UIImageView!
-    
+    @IBOutlet weak var height: NSLayoutConstraint!
     
     
     
@@ -26,30 +26,17 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
     
     
     
-    @IBOutlet weak var height: NSLayoutConstraint!
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        height.constant = descriptionTextView.contentSize.height
-        descriptionTextView.delegate = self
-        nameTfOutlet.delegate = self
-        priceTfOutlet.delegate = self
-        hudProgress = JGProgressHUD()
-        viewModel.productName = nameTfOutlet.text
-        viewModel.productDescription = descriptionTextView.text
-        viewModel.productPrice = priceTfOutlet.text
-        
-        viewModel.isLoading.bind {[self] loading in
-            if loading {
-                hudProgress!.show(in: self.view)
-            }
-            else {
-                hudProgress!.dismiss(afterDelay: 1, animated: true)
-                
-            }
-        }
+        readyController()
+        bindlingFunctions()
         
     }
-    
+    //MARK: Buttons calls
     @IBAction func addProductPressed(_ sender: UIButton) {
         if let data = uploadedImage.image!.pngData() {
             viewModel.addCloudData(imageData: data)
@@ -61,6 +48,15 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
         }
         
     }
+    
+    @IBAction func addImagePressed(_ sender: UIButton) {
+        let imageController = UIImagePickerController()
+        imageController.delegate = self
+        imageController.sourceType = UIImagePickerController.SourceType.photoLibrary
+        self.present(imageController, animated: true)
+    }
+    
+    //MARK: TextFields
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField == nameTfOutlet
@@ -78,6 +74,10 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
         height.constant = textView.contentSize.height
         viewModel.productDescription = descriptionTextView.text
     }
+    
+    
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             uploadedImage.image = image
@@ -85,11 +85,27 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
         self.dismiss(animated: true)
     }
     
-    @IBAction func addImagePressed(_ sender: UIButton) {
-        let imageController = UIImagePickerController()
-        imageController.delegate = self
-        imageController.sourceType = UIImagePickerController.SourceType.photoLibrary
-        self.present(imageController, animated: true)
-    }
     
+    
+    func readyController(){
+        height.constant = descriptionTextView.contentSize.height
+        descriptionTextView.delegate = self
+        nameTfOutlet.delegate = self
+        priceTfOutlet.delegate = self
+        hudProgress = JGProgressHUD()
+        viewModel.productName = nameTfOutlet.text
+        viewModel.productDescription = descriptionTextView.text
+        viewModel.productPrice = priceTfOutlet.text
+    }
+    func bindlingFunctions(){
+        viewModel.isLoading.bind {[self] loading in
+            if loading {
+                hudProgress!.show(in: self.view)
+            }
+            else {
+                hudProgress!.dismiss(afterDelay: 1, animated: true)
+                
+            }
+        }
+    }
 }

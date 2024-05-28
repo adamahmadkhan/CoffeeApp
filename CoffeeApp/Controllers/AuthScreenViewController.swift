@@ -42,10 +42,10 @@ class AuthScreenViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
+    //MARK: Button Calls
     @IBAction func loginBtnPressed(_ sender: UIButton) {
         viewModel.checkUserCredientials()
     }
-    
     
     @IBAction func createBtnPressed(_ sender: UIButton) {
         viewModel.accountCreation()
@@ -56,10 +56,15 @@ class AuthScreenViewController: UIViewController,UITextFieldDelegate {
     }
     
     
+    //MARK: User Define  Functions
     func readyController(){
         hudProgress = JGProgressHUD()
         usernameTfOutlet.delegate = self
         passwordTfOutlet.delegate = self
+        bindingFunctions()
+    }
+    
+    func bindingFunctions(){
         viewModel.isErrorMsgHidden.bind { [self] Bool in
             invalidLoginMsg.isHidden = Bool
         }
@@ -81,8 +86,6 @@ class AuthScreenViewController: UIViewController,UITextFieldDelegate {
                 
             }
         }
-        
-        
     }
     
     func signInWithGoogle(){
@@ -97,6 +100,7 @@ class AuthScreenViewController: UIViewController,UITextFieldDelegate {
             }
             
         }
+    }
         
         /*
          // MARK: - Navigation
@@ -108,5 +112,4 @@ class AuthScreenViewController: UIViewController,UITextFieldDelegate {
          }
          */
         
-    }
 }

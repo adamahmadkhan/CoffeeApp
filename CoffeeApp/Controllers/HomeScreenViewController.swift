@@ -34,19 +34,10 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        topBarImageView.layer.cornerRadius = 20
-        self.coffeeCategoryCvOutlet.register(UINib(nibName: "CoffeeTypesCell", bundle: nil), forCellWithReuseIdentifier: "CoffeeTypesCells")
-        self.coffeeMenuCVOutlet.register(UINib(nibName: "CoffeeMenuCells", bundle: nil), forCellWithReuseIdentifier: "coffeMenuCell")
-        viewModel.getAllProducts()
-        viewModel.products.bind { data in
-            print(data)
-            self.coffeeMenuCVOutlet.reloadData()
-        }
-        viewModel.isLoading.bind { data in
-            self.coffeeMenuCVOutlet.reloadData()
-        }
+        readyController()
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         viewModel.getAllProducts()
         coffeeMenuCVOutlet.reloadData()
@@ -65,7 +56,7 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
 //            }
         }
     
-    
+    //MARK: Collection View functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == coffeeMenuCVOutlet{
             return viewModel.products.value?.count ?? 5
@@ -89,9 +80,6 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(collectionView == coffeeCategoryCvOutlet) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CoffeeTypesCells", for: indexPath) as! CoffeeTypesCell
-//            if indexPath.row == 1 {
-//                cell.titleOutlet.text = "Adammmmmmmm"
-//            }
             return cell
         }
         else {
@@ -130,6 +118,26 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
             detailScreenModal.modalTransitionStyle = .flipHorizontal
             detailScreenModal.modalPresentationStyle = .fullScreen
             self.present(detailScreenModal, animated: true)
+        }
+    }
+    
+    //MARK: User Define Functions
+    
+    func readyController(){
+        topBarImageView.layer.cornerRadius = 20
+        self.coffeeCategoryCvOutlet.register(UINib(nibName: "CoffeeTypesCell", bundle: nil), forCellWithReuseIdentifier: "CoffeeTypesCells")
+        self.coffeeMenuCVOutlet.register(UINib(nibName: "CoffeeMenuCells", bundle: nil), forCellWithReuseIdentifier: "coffeMenuCell")
+        bindingFunctions()
+        viewModel.getAllProducts()
+    }
+    
+    func bindingFunctions(){
+        viewModel.products.bind { data in
+            print(data)
+            self.coffeeMenuCVOutlet.reloadData()
+        }
+        viewModel.isLoading.bind { data in
+            self.coffeeMenuCVOutlet.reloadData()
         }
     }
     

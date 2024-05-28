@@ -28,21 +28,10 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        descriptionMsgLabel.text = productDetail?.Description
-        nameOutlet.text = productDetail?.name
-        subTitleOutlet.text = "Default"
-        imageOutlet.kf.setImage(with: URL(string: productDetail!.image!))
-        
-        bottomBarView.layer.cornerRadius = 25
-        bottomBarView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        bottomBarView.layer.shadowColor = UIColor.black.cgColor
-        bottomBarView.layer.shadowOpacity = 0.8
-        bottomBarView.layer.shadowOffset = .zero
-        bottomBarView.layer.shadowRadius = 10
-        
+        readyController()
     }
     
+    //MARK: Button calls
     @IBAction func showMoreBtnPressed(_ sender: UIButton) {
         showMoreBtnOutlet.isSelected = !showMoreBtnOutlet.isSelected
         if showMoreBtnOutlet.isSelected {
@@ -54,12 +43,25 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
-
         self.dismiss(animated: true)
     }
     
     
     
+    //MARK: User Define Functions
+    func readyController(){
+        descriptionMsgLabel.text = productDetail?.Description
+        nameOutlet.text = productDetail?.name
+        subTitleOutlet.text = "Default"
+        imageOutlet.kf.setImage(with: URL(string: productDetail!.image!))
+        bottomBarView.layer.cornerRadius = 25
+        bottomBarView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        bottomBarView.layer.shadowColor = UIColor.black.cgColor
+        bottomBarView.layer.shadowOpacity = 0.8
+        bottomBarView.layer.shadowOffset = .zero
+        bottomBarView.layer.shadowRadius = 10
+        
+    }
     
     /*
     // MARK: - Navigation

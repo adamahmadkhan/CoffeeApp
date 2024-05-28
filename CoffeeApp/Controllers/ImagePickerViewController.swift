@@ -10,6 +10,7 @@ import PhotosUI
 import FirebaseFirestore
 import FirebaseStorage
 import Reachability
+import JGProgressHUD
 
 class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
@@ -36,6 +37,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     let reachability = try! Reachability()
     var selected = [Int]()
     var viewModel = ImagePickerViewModel()
+    var hudProgress: JGProgressHUD?
     //    var selectedImages  = [UIImage]()
     //    var selectedIndexes = [IndexPath]()
     var currentlyLoading = -1
@@ -44,7 +46,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeController()
+        readyController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,19 +58,23 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     
     //MARK: Image pickers Functions
     @IBAction func galleryButtonPressed(_ sender: UIButton) {
-        configureImagePicker()
+            configureImagePicker()
+            hudProgress?.dismiss()
     }
     
     func configureImagePicker(){
-        var configuration = PHPickerConfiguration()
-        configuration.selectionLimit = 0
-        configuration.filter = .images
-        let pickerViewController = PHPickerViewController(configuration: configuration)
-        pickerViewController.delegate = self
-        present(pickerViewController, animated: true)
+            var configuration = PHPickerConfiguration()
+            configuration.selectionLimit = 0
+            configuration.filter = .images
+            let pickerViewController = PHPickerViewController(configuration: configuration)
+            pickerViewController.delegate = self
+            present(pickerViewController, animated: true)
     }
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        let dispatchGroup = DispatchGroup()
         picker.dismiss(animated: true)
+        //hudProgress?.show(in: self.view)
+        dispatchGroup.enter()
         for result in results {
             result.itemProvider.loadObject(ofClass: UIImage.self) { [self] object, error in
                 if let image = object as? UIImage  {
@@ -118,52 +124,57 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
         uploadImages()
     }
     func uploadImages() {
-        initialzeUpload { [self] in
-            if i + 1 < images.count {
+        let serialQueue = DispatchQueue(label: "my Label",target: .main)
+        serialQueue.async {
+            self.initialzeUpload()
+        }
+        serialQueue.async { [self] in
+            if  i + 1 < images.count {
                 i = i + 1
                 uploadImages()
             }
             else {
                 i = images.count
                 return {
+                    
                     galleryBtnOutlet.isEnabled = true
                 }()
             }
-            
         }
+        
     }
-    
-    func initialzeUpload(completion: @escaping (()->Void)){
+    func initialzeUpload() {
         let cell = imageViewCvOutelet.cellForItem(at: IndexPath(row: i, section: 0)) as? ImageLoaderCell
         //cell?.loaderOutlet.startAnimating()
-        if let data = cell?.imageViewOutlet.image?.pngData() {
-            let path = Int.random(in:  0..<100)
-            let imageRef = storageRef.child("Custom Images/photoId: \(path).png")
-            let uploadTask = imageRef.putData(data, metadata: nil) { (metadata, error) in
-                if let error = error {
-                    print("Error uploading image: \(error)")
-                }
-            }
-            uploadTask.observe(.progress) { snapshot in
-                DispatchQueue.main.async {
-                    let process = Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount)
-                    print("Upload progress: \(process * 100)%")
-                    cell?.percentageOutlet.text = ("\(Int(process * 100))")
-                    cell?.progressBar.progress = process
-                    cell?.reloadInputViews()
-                }
-            }
-            uploadTask.observe(.success){ snapshot in
-                DispatchQueue.main.async{
-                    // cell?.loaderOutlet.stopAnimating()
-                    cell?.progressBar.isHidden  = true
-                    cell?.percentageOutlet.isHidden = true
-                    completion()
+            if let data = cell?.imageViewOutlet.image?.pngData() {
+                let path = Int.random(in:  0..<100)
+                let imageRef = storageRef.child("Custom Images/photoId: \(path).png")
+                let uploadTask = imageRef.putData(data, metadata: nil) { (metadata, error) in
+                    if let error = error {
+                        print("Error uploading image: \(error)")
+                    }
                 }
                 
+                uploadTask.observe(.progress) { snapshot in
+                    DispatchQueue.main.async {
+                        let process = Float(snapshot.progress!.completedUnitCount) / Float(snapshot.progress!.totalUnitCount)
+                        print("Upload progress: \(process * 100)%")
+                        cell?.percentageOutlet.text = ("\(Int(process * 100))")
+                        cell?.progressBar.progress = process
+                        cell?.reloadInputViews()
+                    }
+                }
+                uploadTask.observe(.success){ snapshot in
+                    DispatchQueue.main.async{
+                        // cell?.loaderOutlet.stopAnimating()
+                        cell?.progressBar.isHidden  = true
+                        cell?.percentageOutlet.isHidden = true
+                        //completion()
+                    }
+                    
+                }
             }
         }
-    }
     
     func monitorConnection(){
         let alert = UIAlertController(title: "Alert", message: "Check Internet", preferredStyle: .alert)
@@ -190,14 +201,15 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             
         }
     }
-        func initializeController(){
-            self.imageViewCvOutelet.allowsMultipleSelection = true
-            self.imageViewCvOutelet.register(UINib(nibName: "ImageLoaderCell" , bundle: nil), forCellWithReuseIdentifier: "imageLoaderCells")
-            uploadBtnOutlet.isEnabled = false
-            viewModel.isLoading.bind { data in
-                //self.imageViewCvOutelet.reloadData()
-            }
+    func readyController(){
+        self.imageViewCvOutelet.allowsMultipleSelection = true
+        self.imageViewCvOutelet.register(UINib(nibName: "ImageLoaderCell" , bundle: nil), forCellWithReuseIdentifier: "imageLoaderCells")
+        uploadBtnOutlet.isEnabled = false
+        hudProgress = JGProgressHUD()
+        viewModel.isLoading.bind { data in
+            //self.imageViewCvOutelet.reloadData()
         }
-        
     }
+    
+}
 
