@@ -13,6 +13,7 @@ import JGProgressHUD
 import SkeletonView
 import Kingfisher
 import SDWebImage
+import Connectivity
 
 
 class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -29,6 +30,7 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
     let db = Firestore.firestore()
     var hudProgress: JGProgressHUD?
     var viewModel = HomeScreenViewModel()
+    let connectivity: Connectivity = Connectivity()
     
    
     
@@ -129,6 +131,13 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
         self.coffeeMenuCVOutlet.register(UINib(nibName: "CoffeeMenuCells", bundle: nil), forCellWithReuseIdentifier: "coffeMenuCell")
         bindingFunctions()
         viewModel.getAllProducts()
+        
+        
+        
+        connectivity.isPollingEnabled = true
+        connectivity.pollingInterval = 2
+        configureConnectivityNotifier()
+        connectivity.startNotifier()
     }
     
     func bindingFunctions(){
@@ -141,5 +150,24 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
         }
     }
     
+    func configureConnectivityNotifier() {
+            let connectivityChanged: (Connectivity) -> Void = { [weak self] connectivity in
+                self?.updateConnectionStatus(connectivity.status)
+            }
+            connectivity.whenConnected = connectivityChanged
+            connectivity.whenDisconnected = connectivityChanged
+        }
+    
+    func updateConnectionStatus(_ status: Connectivity.Status) {
+        let alert = UIAlertController(title: "Alert", message: "Check Internet", preferredStyle: .alert)
+            switch status {
+            case .connectedViaWiFi, .connectedViaCellular, .connectedViaEthernet, .connected:
+                self.dismiss(animated: true)
+            case .connectedViaWiFiWithoutInternet, .connectedViaCellularWithoutInternet, .connectedViaEthernetWithoutInternet, .notConnected:
+                self.present(alert, animated: true, completion: nil)
+            case .determining:
+                print("hello")
+            }
+        }
   
 }

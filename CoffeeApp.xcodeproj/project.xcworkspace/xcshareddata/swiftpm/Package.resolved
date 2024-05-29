@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "connectivity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rwbutler/Connectivity.git",
+      "state" : {
+        "revision" : "d5ba3725634e2afd6c8fc1029cc47c885394ff0b",
+        "version" : "6.0.0"
+      }
+    },
+    {
       "identity" : "easystash",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onmyway133/EasyStash",
@@ -169,15 +178,6 @@
       "state" : {
         "revision" : "540318ecedd63d883069ae7f1ed811a2df00b6ac",
         "version" : "2.4.0"
-      }
-    },
-    {
-      "identity" : "reachability.swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ashleymills/Reachability.swift",
-      "state" : {
-        "branch" : "master",
-        "revision" : "7cbd73f46a7dfaeca079e18df7324c6de6d1834a"
       }
     },
     {

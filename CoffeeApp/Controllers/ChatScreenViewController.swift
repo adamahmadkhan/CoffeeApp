@@ -8,7 +8,13 @@
 import UIKit
 
 class ChatScreenViewController: UIViewController {
+    
+    
 
+    @IBOutlet weak var messageBoxOutlet: UITextView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -45,6 +45,7 @@
 		A00B363F2BFF1FCC008B9A63 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A00B363E2BFF1FCC008B9A63 /* GoogleSignInSwift */; };
 		A00B36422BFF215C008B9A63 /* EasyStash in Frameworks */ = {isa = PBXBuildFile; productRef = A00B36412BFF215C008B9A63 /* EasyStash */; };
 		A00B36442BFF219D008B9A63 /* EasyStash in Frameworks */ = {isa = PBXBuildFile; productRef = A00B36432BFF219D008B9A63 /* EasyStash */; };
+		A01425E22C07004100D8AF15 /* Connectivity in Frameworks */ = {isa = PBXBuildFile; productRef = A01425E12C07004100D8AF15 /* Connectivity */; };
 		A029A3212BFF2E45002123F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A029A3202BFF2E45002123F1 /* Assets.xcassets */; };
 		A02E643D2BFF2461004526EA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E643B2BFF2461004526EA /* LoginModel.swift */; };
 		A02E643E2BFF2461004526EA /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E643C2BFF2461004526EA /* ProductModel.swift */; };
@@ -74,7 +75,7 @@
 		A06E90392BFF1708004A1097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E90382BFF1708004A1097 /* SceneDelegate.swift */; };
 		A06E90412BFF1708004A1097 /* CoffeeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A06E903F2BFF1708004A1097 /* CoffeeApp.xcdatamodeld */; };
 		A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06E90442BFF170A004A1097 /* LaunchScreen.storyboard */; };
-		A0FC1C8F2C04A40D00A32B2B /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = A0FC1C8E2C04A40D00A32B2B /* Reachability */; };
+		A0F8A3682C05EF2D003450F2 /* ChatScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F8A3672C05EF2D003450F2 /* ChatScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		A06E90402BFF1708004A1097 /* CoffeeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoffeeApp.xcdatamodel; sourceTree = "<group>"; };
 		A06E90452BFF170A004A1097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A06E90472BFF170A004A1097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0F8A3672C05EF2D003450F2 /* ChatScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +128,6 @@
 				A02E645F2BFF26B4004526EA /* SDWebImage in Frameworks */,
 				A00B35F42BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				A00B361A2BFF1E35008B9A63 /* FirebaseMLModelDownloader in Frameworks */,
-				A0FC1C8F2C04A40D00A32B2B /* Reachability in Frameworks */,
 				A00B363D2BFF1FCC008B9A63 /* GoogleSignIn in Frameworks */,
 				A00B360E2BFF1E35008B9A63 /* FirebaseFirestoreSwift in Frameworks */,
 				A00B35FA2BFF1E35008B9A63 /* FirebaseAppCheck in Frameworks */,
@@ -155,6 +156,7 @@
 				A00B36422BFF215C008B9A63 /* EasyStash in Frameworks */,
 				A00B362C2BFF1E82008B9A63 /* SkeletonView in Frameworks */,
 				A00B36182BFF1E35008B9A63 /* FirebaseInstallations in Frameworks */,
+				A01425E22C07004100D8AF15 /* Connectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +206,7 @@
 				A02E64512BFF25AD004526EA /* HomeScreenViewController.swift */,
 				A02E644E2BFF25AC004526EA /* ImagePickerViewController.swift */,
 				A02E64502BFF25AC004526EA /* ViewController.swift */,
+				A0F8A3672C05EF2D003450F2 /* ChatScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -309,7 +312,7 @@
 				A02E645B2BFF261F004526EA /* JGProgressHUD */,
 				A02E645E2BFF26B4004526EA /* SDWebImage */,
 				A02E64602BFF26B4004526EA /* SDWebImageMapKit */,
-				A0FC1C8E2C04A40D00A32B2B /* Reachability */,
+				A01425E12C07004100D8AF15 /* Connectivity */,
 			);
 			productName = CoffeeApp;
 			productReference = A06E90332BFF1707004A1097 /* CoffeeApp.app */;
@@ -348,7 +351,7 @@
 				A00B36402BFF215C008B9A63 /* XCRemoteSwiftPackageReference "EasyStash" */,
 				A02E645A2BFF261F004526EA /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				A02E645D2BFF26B4004526EA /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				A0FC1C8D2C04A40D00A32B2B /* XCRemoteSwiftPackageReference "Reachability" */,
+				A01425E02C07004100D8AF15 /* XCRemoteSwiftPackageReference "Connectivity" */,
 			);
 			productRefGroup = A06E90342BFF1707004A1097 /* Products */;
 			projectDirPath = "";
@@ -397,6 +400,7 @@
 				A02E646B2BFF2715004526EA /* ImageLoaderCell.swift in Sources */,
 				A00B363A2BFF1F8C008B9A63 /* ApplicationSessionMannager.swift in Sources */,
 				A02E64542BFF25AD004526EA /* GettingStartedViewController.swift in Sources */,
+				A0F8A3682C05EF2D003450F2 /* ChatScreenViewController.swift in Sources */,
 				A02E64562BFF25AD004526EA /* DetailsViewController.swift in Sources */,
 				A02E64522BFF25AD004526EA /* AddProductViewController.swift in Sources */,
 				A02E64492BFF2525004526EA /* TokenModel.swift in Sources */,
@@ -674,6 +678,14 @@
 				minimumVersion = 1.1.9;
 			};
 		};
+		A01425E02C07004100D8AF15 /* XCRemoteSwiftPackageReference "Connectivity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rwbutler/Connectivity.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.0.0;
+			};
+		};
 		A02E645A2BFF261F004526EA /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
@@ -688,14 +700,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.19.2;
-			};
-		};
-		A0FC1C8D2C04A40D00A32B2B /* XCRemoteSwiftPackageReference "Reachability" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
-			requirement = {
-				branch = master;
-				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -871,6 +875,11 @@
 			package = A00B36402BFF215C008B9A63 /* XCRemoteSwiftPackageReference "EasyStash" */;
 			productName = EasyStash;
 		};
+		A01425E12C07004100D8AF15 /* Connectivity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A01425E02C07004100D8AF15 /* XCRemoteSwiftPackageReference "Connectivity" */;
+			productName = Connectivity;
+		};
 		A02E645B2BFF261F004526EA /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A02E645A2BFF261F004526EA /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
@@ -885,11 +894,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A02E645D2BFF26B4004526EA /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
-		};
-		A0FC1C8E2C04A40D00A32B2B /* Reachability */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A0FC1C8D2C04A40D00A32B2B /* XCRemoteSwiftPackageReference "Reachability" */;
-			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 
