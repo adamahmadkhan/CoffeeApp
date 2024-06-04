@@ -31,15 +31,11 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     //let serialQueue = DispatchQueue(label: "my.Label.com")
     let connectivity: Connectivity = Connectivity()
     //let reachability = try! Reachability()
-    var selected = [Int]()
     var viewModel = ImagePickerViewModel()
     var hudProgress: JGProgressHUD?
-    var currentlyLoading = -1
-    var currentlySelected: IndexPath?
     let storageRef = Storage.storage().reference()
     var  i = 0
-    var totalImages = 0
-    var allPhotos = PHFetchResult<PHAsset>()
+    var selectedCellsIndices = [IndexPath]()
     
     
     override func viewDidLoad() {
@@ -48,6 +44,9 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
         readyController()
         bindingFunctions()
         
+        viewModel.loadImages {
+            self.imageViewCvOutelet.reloadData()
+        }
 
         
         
@@ -62,7 +61,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //monitorConnection()
+      
     }
     
     
@@ -106,34 +105,38 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //            if let cell = collectionView.cellForItem(at: indexPath) as? ImageLoaderCell {
-        //                cell.mainViewOutlet.backgroundColor = .green
-        //            }
+                    if let cell = collectionView.cellForItem(at: indexPath) as? ImageLoaderCell {
+                        selectedCellsIndices.append(indexPath)
+                        viewModel.imagesToUpload.append(cell.imageViewOutlet.image!)
+                        cell.mainViewOutlet.backgroundColor = .blue
+                    }
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        //        selectedIndexes = self.imageViewCvOutelet.indexPathsForSelectedItems!
-        //                if let cell = collectionView.cellForItem(at: indexPath) as? ImageLoaderCell {
-        //                    cell.mainViewOutlet.backgroundColor = .white
-        //               }
+                        if let cell = collectionView.cellForItem(at: indexPath) as? ImageLoaderCell {
+                            viewModel.imagesToUpload = viewModel.imagesToUpload.filter { $0 != cell.imageViewOutlet.image }
+                            selectedCellsIndices = selectedCellsIndices.filter{ $0 != indexPath }
+                            cell.mainViewOutlet.backgroundColor = .white
+                       }
     }
     
     
     //MARK: Upload and firebase Functions
     @IBAction func uploadBtnPressed(_ sender: Any) {
-        uploadBtnOutlet.isEnabled = false
+        uploadBtnOutlet.isEnabled = true
         galleryBtnOutlet.isEnabled = false
         uploadImages()
     }
     func uploadImages() {
-        guard i < viewModel.images.value!.count else {
+        guard i < viewModel.imagesToUpload.count else {
                 galleryBtnOutlet.isEnabled = true
+                
                 return
             }
             initialzeUpload()
         }
         
     func initialzeUpload() {
-        let cell = imageViewCvOutelet.cellForItem(at: IndexPath(row: i, section: 0)) as? ImageLoaderCell
+        let cell = imageViewCvOutelet.cellForItem(at: selectedCellsIndices[i]) as? ImageLoaderCell
         //cell?.loaderOutlet.startAnimating()
         cell?.progressBar.isHidden = false
         cell?.percentageOutlet.isHidden = false
@@ -161,10 +164,10 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
                     // cell?.loaderOutlet.stopAnimating()
                     cell?.progressBar.isHidden  = true
                     cell?.percentageOutlet.isHidden = true
+                    cell?.mainViewOutlet.backgroundColor = .white
                     i += 1
                     uploadImages()
                 }
-                
             }
         }
     }
