@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A001BD7B2C085261000EA8AC /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001BD7A2C085261000EA8AC /* Observers.swift */; };
 		A00B35EE2BFF1C0B008B9A63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00B35EC2BFF1C0B008B9A63 /* GoogleService-Info.plist */; };
 		A00B35F22BFF1E35008B9A63 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A00B35F12BFF1E35008B9A63 /* FirebaseAnalytics */; };
 		A00B35F42BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A00B35F32BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -75,10 +76,13 @@
 		A06E90392BFF1708004A1097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E90382BFF1708004A1097 /* SceneDelegate.swift */; };
 		A06E90412BFF1708004A1097 /* CoffeeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A06E903F2BFF1708004A1097 /* CoffeeApp.xcdatamodeld */; };
 		A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06E90442BFF170A004A1097 /* LaunchScreen.storyboard */; };
-		A0F8A3682C05EF2D003450F2 /* ChatScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F8A3672C05EF2D003450F2 /* ChatScreenViewController.swift */; };
+		A0CBB22B2C09E0F7006853AB /* ChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CBB22A2C09E0F7006853AB /* ChatMessageViewController.swift */; };
+		A0FBD1CF2C09D67F005CF973 /* MessageTvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBD1CD2C09D67F005CF973 /* MessageTvCell.swift */; };
+		A0FBD1D02C09D67F005CF973 /* MessageTvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FBD1CE2C09D67F005CF973 /* MessageTvCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A001BD7A2C085261000EA8AC /* Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observers.swift; sourceTree = "<group>"; };
 		A00B35EC2BFF1C0B008B9A63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A00B36352BFF1F80008B9A63 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A00B36372BFF1F86008B9A63 /* DynamicType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicType.swift; sourceTree = "<group>"; };
@@ -111,7 +115,9 @@
 		A06E90402BFF1708004A1097 /* CoffeeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoffeeApp.xcdatamodel; sourceTree = "<group>"; };
 		A06E90452BFF170A004A1097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A06E90472BFF170A004A1097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0F8A3672C05EF2D003450F2 /* ChatScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenViewController.swift; sourceTree = "<group>"; };
+		A0CBB22A2C09E0F7006853AB /* ChatMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageViewController.swift; sourceTree = "<group>"; };
+		A0FBD1CD2C09D67F005CF973 /* MessageTvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTvCell.swift; sourceTree = "<group>"; };
+		A0FBD1CE2C09D67F005CF973 /* MessageTvCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTvCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 				A00B36352BFF1F80008B9A63 /* FirebaseManager.swift */,
 				A00B36392BFF1F8B008B9A63 /* ApplicationSessionMannager.swift */,
 				A00B36372BFF1F86008B9A63 /* DynamicType.swift */,
+				A001BD7A2C085261000EA8AC /* Observers.swift */,
 			);
 			path = SupportingClasses;
 			sourceTree = "<group>";
@@ -206,12 +213,12 @@
 				A02E64512BFF25AD004526EA /* HomeScreenViewController.swift */,
 				A02E644E2BFF25AC004526EA /* ImagePickerViewController.swift */,
 				A02E64502BFF25AC004526EA /* ViewController.swift */,
-				A0F8A3672C05EF2D003450F2 /* ChatScreenViewController.swift */,
+				A0CBB22A2C09E0F7006853AB /* ChatMessageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		A02E64592BFF25B6004526EA /* VIews */ = {
+		A02E64592BFF25B6004526EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A02E64672BFF2715004526EA /* CoffeeMenuCells.swift */,
@@ -222,8 +229,10 @@
 				A02E64652BFF2715004526EA /* ImageLoaderCell.xib */,
 				A02E64662BFF2715004526EA /* Main.storyboard */,
 				A06E90442BFF170A004A1097 /* LaunchScreen.storyboard */,
+				A0FBD1CD2C09D67F005CF973 /* MessageTvCell.swift */,
+				A0FBD1CE2C09D67F005CF973 /* MessageTvCell.xib */,
 			);
-			path = VIews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A06E902A2BFF1707004A1097 = {
@@ -245,7 +254,7 @@
 		A06E90352BFF1707004A1097 /* CoffeeApp */ = {
 			isa = PBXGroup;
 			children = (
-				A02E64592BFF25B6004526EA /* VIews */,
+				A02E64592BFF25B6004526EA /* Views */,
 				A02E644A2BFF258E004526EA /* Controllers */,
 				A02E643F2BFF2465004526EA /* viewModel */,
 				A02E643A2BFF243D004526EA /* Model */,
@@ -368,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A02E646C2BFF2715004526EA /* ImageLoaderCell.xib in Resources */,
+				A0FBD1D02C09D67F005CF973 /* MessageTvCell.xib in Resources */,
 				A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */,
 				A02E646F2BFF2715004526EA /* CoffeeMenuCells.xib in Resources */,
 				A02E64692BFF2715004526EA /* CoffeeTypesCell.xib in Resources */,
@@ -396,11 +406,13 @@
 				A00B36382BFF1F86008B9A63 /* DynamicType.swift in Sources */,
 				A02E64462BFF2475004526EA /* AddProductViewModel.swift in Sources */,
 				A02E64582BFF25AD004526EA /* HomeScreenViewController.swift in Sources */,
+				A001BD7B2C085261000EA8AC /* Observers.swift in Sources */,
+				A0FBD1CF2C09D67F005CF973 /* MessageTvCell.swift in Sources */,
 				A02E643E2BFF2461004526EA /* ProductModel.swift in Sources */,
 				A02E646B2BFF2715004526EA /* ImageLoaderCell.swift in Sources */,
 				A00B363A2BFF1F8C008B9A63 /* ApplicationSessionMannager.swift in Sources */,
 				A02E64542BFF25AD004526EA /* GettingStartedViewController.swift in Sources */,
-				A0F8A3682C05EF2D003450F2 /* ChatScreenViewController.swift in Sources */,
+				A0CBB22B2C09E0F7006853AB /* ChatMessageViewController.swift in Sources */,
 				A02E64562BFF25AD004526EA /* DetailsViewController.swift in Sources */,
 				A02E64522BFF25AD004526EA /* AddProductViewController.swift in Sources */,
 				A02E64492BFF2525004526EA /* TokenModel.swift in Sources */,

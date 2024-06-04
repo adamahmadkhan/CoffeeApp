@@ -12,9 +12,8 @@ let db = Firestore.firestore()
 
 
 class HomeScreenViewModel {
-    
-    var isLoading: DynamicType<Bool> = DynamicType<Bool>()
-    var products: DynamicType<[ProductModel]> = DynamicType<[ProductModel]>()
+    var isLoading: Observers<Bool> = Observers(false)
+    var products: Observers<[ProductModel]> = Observers([])
     
     init(){
         self.isLoading.value = false

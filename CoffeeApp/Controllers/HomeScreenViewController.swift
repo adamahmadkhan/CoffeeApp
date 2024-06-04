@@ -135,9 +135,9 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
         
         
         connectivity.isPollingEnabled = true
-        connectivity.pollingInterval = 2
+        connectivity.pollingInterval = 5
         configureConnectivityNotifier()
-        connectivity.startNotifier()
+        //connectivity.startNotifier()
     }
     
     func bindingFunctions(){
@@ -152,13 +152,13 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
     
     func configureConnectivityNotifier() {
             let connectivityChanged: (Connectivity) -> Void = { [weak self] connectivity in
-                self?.updateConnectionStatus(connectivity.status)
+                self?.updateConnectionStatus(status: connectivity.status)
             }
             connectivity.whenConnected = connectivityChanged
             connectivity.whenDisconnected = connectivityChanged
         }
     
-    func updateConnectionStatus(_ status: Connectivity.Status) {
+    func updateConnectionStatus(status: Connectivity.Status) {
         let alert = UIAlertController(title: "Alert", message: "Check Internet", preferredStyle: .alert)
             switch status {
             case .connectedViaWiFi, .connectedViaCellular, .connectedViaEthernet, .connected:
