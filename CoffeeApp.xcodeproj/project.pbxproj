@@ -59,7 +59,7 @@
 		A02E64532BFF25AD004526EA /* AuthScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E644C2BFF25AC004526EA /* AuthScreenViewController.swift */; };
 		A02E64542BFF25AD004526EA /* GettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E644D2BFF25AC004526EA /* GettingStartedViewController.swift */; };
 		A02E64552BFF25AD004526EA /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E644E2BFF25AC004526EA /* ImagePickerViewController.swift */; };
-		A02E64562BFF25AD004526EA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E644F2BFF25AC004526EA /* DetailsViewController.swift */; };
+		A02E64562BFF25AD004526EA /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E644F2BFF25AC004526EA /* ProductDetailViewController.swift */; };
 		A02E64572BFF25AD004526EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E64502BFF25AC004526EA /* ViewController.swift */; };
 		A02E64582BFF25AD004526EA /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E64512BFF25AD004526EA /* HomeScreenViewController.swift */; };
 		A02E645C2BFF261F004526EA /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A02E645B2BFF261F004526EA /* JGProgressHUD */; };
@@ -99,7 +99,7 @@
 		A02E644C2BFF25AC004526EA /* AuthScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthScreenViewController.swift; sourceTree = "<group>"; };
 		A02E644D2BFF25AC004526EA /* GettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettingStartedViewController.swift; sourceTree = "<group>"; };
 		A02E644E2BFF25AC004526EA /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
-		A02E644F2BFF25AC004526EA /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		A02E644F2BFF25AC004526EA /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A02E64502BFF25AC004526EA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A02E64512BFF25AD004526EA /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		A02E64622BFF2715004526EA /* CoffeeTypesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeTypesCell.xib; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 			children = (
 				A02E644B2BFF25AC004526EA /* AddProductViewController.swift */,
 				A02E644C2BFF25AC004526EA /* AuthScreenViewController.swift */,
-				A02E644F2BFF25AC004526EA /* DetailsViewController.swift */,
+				A02E644F2BFF25AC004526EA /* ProductDetailViewController.swift */,
 				A02E644D2BFF25AC004526EA /* GettingStartedViewController.swift */,
 				A02E64512BFF25AD004526EA /* HomeScreenViewController.swift */,
 				A02E644E2BFF25AC004526EA /* ImagePickerViewController.swift */,
@@ -413,7 +413,7 @@
 				A00B363A2BFF1F8C008B9A63 /* ApplicationSessionMannager.swift in Sources */,
 				A02E64542BFF25AD004526EA /* GettingStartedViewController.swift in Sources */,
 				A0CBB22B2C09E0F7006853AB /* ChatMessageViewController.swift in Sources */,
-				A02E64562BFF25AD004526EA /* DetailsViewController.swift in Sources */,
+				A02E64562BFF25AD004526EA /* ProductDetailViewController.swift in Sources */,
 				A02E64522BFF25AD004526EA /* AddProductViewController.swift in Sources */,
 				A02E64492BFF2525004526EA /* TokenModel.swift in Sources */,
 				A02E64472BFF2475004526EA /* ImagePickerViewModel.swift in Sources */,

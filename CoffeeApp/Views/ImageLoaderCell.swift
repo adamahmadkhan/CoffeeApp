@@ -20,6 +20,8 @@ class ImageLoaderCell: UICollectionViewCell {
     @IBOutlet weak var loaderOutlet: UIActivityIndicatorView!
     @IBOutlet weak var imageViewOutlet: UIImageView!
     
+    
+    @IBOutlet weak var isUploadedIcon: UIImageView!
     @IBOutlet weak var percentageOutlet: UILabel!
 
     

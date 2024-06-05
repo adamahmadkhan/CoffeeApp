@@ -16,11 +16,9 @@ import JGProgressHUD
 
 class ImagePickerViewModel{
     let storageRef = Storage.storage().reference()
-    var isLoading: Observers<Bool> = Observers(false)
+    var isLoading: DynamicType<Bool> = DynamicType<Bool>()
     var firstAttempt = true
-    var images = DynamicType<[UIImage]>()
-    let queue1 = OperationQueue()
-    let queue2 = OperationQueue()
+    var images: Observers<[UIImage]> = Observers([])
     let dispatchGroup = DispatchGroup()
     var hudProgress: JGProgressHUD?
     var imagesToUpload = [UIImage]()
@@ -30,8 +28,9 @@ class ImagePickerViewModel{
     }
     
     func loadImages(completion: @escaping () -> Void) {
+        self.isLoading.value = true
         let fetchOptions = PHFetchOptions()
-//        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        //fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
         let fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
         var photos: [PHAsset] = []
@@ -56,6 +55,7 @@ class ImagePickerViewModel{
         }
         
         dispatchGroup.notify(queue: .main) {
+            self.isLoading.value = false
             completion()
         }
     }

@@ -115,7 +115,7 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == coffeeMenuCVOutlet {
-            let detailScreenModal = self.storyboard?.instantiateViewController(identifier: "detailScreen") as! DetailsViewController
+            let detailScreenModal = self.storyboard?.instantiateViewController(identifier: "detailScreen") as! ProductDetailViewController
             detailScreenModal.productDetail = viewModel.products.value?[indexPath.item]
             detailScreenModal.modalTransitionStyle = .flipHorizontal
             detailScreenModal.modalPresentationStyle = .fullScreen
@@ -137,7 +137,7 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
         connectivity.isPollingEnabled = true
         connectivity.pollingInterval = 5
         configureConnectivityNotifier()
-        //connectivity.startNotifier()
+        connectivity.startNotifier()
     }
     
     func bindingFunctions(){

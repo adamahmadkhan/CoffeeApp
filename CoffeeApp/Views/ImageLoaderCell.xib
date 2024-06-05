@@ -26,6 +26,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="4lN-iQ-NwS"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="WnG-vc-POg">
                                 <rect key="frame" x="249" y="10" width="37" height="37"/>
@@ -43,18 +46,37 @@
                                 <color key="progressTintColor" systemColor="systemGreenColor"/>
                                 <color key="trackTintColor" red="0.9193766713" green="0.3028941751" blue="0.2391715348" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fus-fk-120">
+                                <rect key="frame" x="264" y="-0.66666666666666785" width="30" height="31.333333333333336"/>
+                                <color key="tintColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="0.80516021110000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AeB-VF-Fn4"/>
+                                    <constraint firstAttribute="width" constant="30" id="fgl-Y8-Ew1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="eeR-Od-j7Y" secondAttribute="trailing" constant="5" id="9vz-VQ-lrL"/>
                             <constraint firstItem="WnG-vc-POg" firstAttribute="top" secondItem="hyy-2L-2aM" secondAttribute="top" constant="10" id="CYe-ZO-N5c"/>
+                            <constraint firstAttribute="trailing" secondItem="fus-fk-120" secondAttribute="trailing" id="EdM-Jt-27z"/>
                             <constraint firstItem="JgD-eV-fnC" firstAttribute="top" secondItem="hyy-2L-2aM" secondAttribute="top" constant="10" id="LTD-L5-nGA"/>
                             <constraint firstAttribute="bottom" secondItem="eeR-Od-j7Y" secondAttribute="bottom" id="WWw-cm-hMS"/>
+                            <constraint firstItem="fus-fk-120" firstAttribute="top" secondItem="hyy-2L-2aM" secondAttribute="top" id="cDa-uf-d6C"/>
                             <constraint firstAttribute="trailing" secondItem="WnG-vc-POg" secondAttribute="trailing" constant="8" id="hb1-vi-prE"/>
                             <constraint firstItem="JgD-eV-fnC" firstAttribute="leading" secondItem="eeR-Od-j7Y" secondAttribute="leading" id="sSu-hn-7VY"/>
                             <constraint firstItem="JgD-eV-fnC" firstAttribute="trailing" secondItem="eeR-Od-j7Y" secondAttribute="trailing" id="smK-EY-p2j"/>
                             <constraint firstItem="eeR-Od-j7Y" firstAttribute="leading" secondItem="hyy-2L-2aM" secondAttribute="leading" constant="5" id="tuS-k4-njY"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -68,6 +90,7 @@
             <size key="customSize" width="294" height="156"/>
             <connections>
                 <outlet property="imageViewOutlet" destination="eeR-Od-j7Y" id="27M-1s-XNo"/>
+                <outlet property="isUploadedIcon" destination="fus-fk-120" id="Def-Yw-SNY"/>
                 <outlet property="loaderOutlet" destination="WnG-vc-POg" id="11h-Nm-KFf"/>
                 <outlet property="mainViewOutlet" destination="hyy-2L-2aM" id="XcC-a0-0oB"/>
                 <outlet property="percentageOutlet" destination="tUO-Pg-Eot" id="vPf-Zt-i6h"/>
@@ -77,11 +100,12 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="checkmark.seal.fill" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
