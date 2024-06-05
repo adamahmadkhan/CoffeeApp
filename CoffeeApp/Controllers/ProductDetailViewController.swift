@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class DetailsViewController: UIViewController {
+class ProductDetailViewController: UIViewController {
 
     //MARK: Outlets
     @IBOutlet weak var bottomBarView: UIView!
