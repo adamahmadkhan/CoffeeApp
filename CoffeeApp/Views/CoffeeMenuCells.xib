@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,7 +70,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="cellBackground"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="yTr-mF-8m9" secondAttribute="trailing" id="0gj-Gv-Xz2"/>
                             <constraint firstItem="yTr-mF-8m9" firstAttribute="leading" secondItem="YyR-fc-oqX" secondAttribute="leading" id="9SB-sS-0dr"/>
@@ -112,5 +113,8 @@
     <resources>
         <image name="Screenshot 2024-04-17 at 11.03.29 AM" width="346" height="282"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="cellBackground">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

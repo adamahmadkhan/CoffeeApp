@@ -44,11 +44,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
         
         readyController()
         bindingFunctions()
-        
-        viewModel.loadImages {
-            self.imageViewCvOutelet.reloadData()
-        }
-
+      
         //imageViewCvOutelet.allowsMultipleSelection = false
         //connectivity.connectivityURLs = [URL(string: "https://www.google.com/")!]
         //        connectivity.isPollingEnabled = true
@@ -114,6 +110,14 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             cell.hideSkeleton()
             if imageViewCvOutelet.indexPathsForSelectedItems!.contains(indexPath){
                 cell.mainViewOutlet.backgroundColor = .blue
+                if indexPath.row == currentlyUploading {
+                    cell.percentageOutlet.isHidden = false
+                    cell.progressBar.isHidden = false
+                }
+                    else {
+                        cell.percentageOutlet.isHidden = true
+                        cell.progressBar.isHidden = true
+                    }
             }
             else {
                 cell.mainViewOutlet.backgroundColor = .white
@@ -124,7 +128,6 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             else {
                 cell.isUploadedIcon.isHidden = true
             }
-            
             return cell
         }
     }
@@ -151,9 +154,13 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
         manageUpload()
     }
     func manageUpload() {
-        guard currentlyUploading < viewModel.imagesToUpload.count else {
+        guard currentlyUploading <  imageViewCvOutelet.indexPathsForSelectedItems!.count else {
             uploadBtnOutlet.isEnabled = true
             galleryBtnOutlet.isEnabled = true
+            imageViewCvOutelet.indexPathsForSelectedItems?.forEach { imageViewCvOutelet.deselectItem(at: $0, animated: false) }
+            selectedCellsIndices.removeAll()
+            currentlyUploading = 0
+            imageViewCvOutelet.reloadData()
             return
         }
         initialzeUpload()
@@ -191,6 +198,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
                     cell?.mainViewOutlet.backgroundColor = .white
                     cell?.isUploadedIcon.isHidden = false
                     currentlyUploading += 1
+                    uploadedImages.append(cell!.imageViewOutlet.image!)
                     manageUpload()
                 }
             }
@@ -227,20 +235,23 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     func readyController(){
         self.imageViewCvOutelet.allowsMultipleSelection = true
         self.imageViewCvOutelet.register(UINib(nibName: "ImageLoaderCell" , bundle: nil), forCellWithReuseIdentifier: "imageLoaderCells")
-        uploadBtnOutlet.isEnabled = false
+        uploadBtnOutlet.isEnabled = true
         hudProgress = JGProgressHUD()
         viewModel.isLoading.bind {[self] loading in
             if loading {
                 hudProgress!.show(in: self.view)
             }
             else {
-                hudProgress!.dismiss(afterDelay: 1, animated: true)
+                hudProgress!.dismiss(afterDelay: 0.2, animated: true)
                 
             }
         }
     }
     func bindingFunctions(){
         
+        viewModel.loadImages {
+            self.imageViewCvOutelet.reloadData()
+        }
         self.viewModel.images.bind { data in
             DispatchQueue.main.async {
                 if self.viewModel.images.value!.count > self.imageViewCvOutelet.numberOfItems(inSection: 0){

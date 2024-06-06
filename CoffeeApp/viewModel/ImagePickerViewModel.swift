@@ -28,25 +28,18 @@ class ImagePickerViewModel{
     }
     
     func loadImages(completion: @escaping () -> Void) {
-        self.isLoading.value = true
+        //self.isLoading.value = true
+         
         let fetchOptions = PHFetchOptions()
-        //fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        
-        let fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        var photos: [PHAsset] = []
-        fetchResult.enumerateObjects { (asset, _, _) in
-            photos.append(asset)
-        }
-        
+        let options = PHImageRequestOptions()
         let imageManager = PHImageManager.default()
-        
-        for asset in photos {
+        options.isSynchronous = true
+        options.deliveryMode = .fastFormat
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        let fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        for index in 0 ..< fetchResult.count {
             dispatchGroup.enter()
-            let options = PHImageRequestOptions()
-            options.isSynchronous = false
-            options.deliveryMode = .highQualityFormat
-            
-            imageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: options) { (image, _) in
+            imageManager.requestImage(for: fetchResult.object(at: index), targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: options) { (image, _) in
                 if let image = image {
                     self.images.value?.append(image)
                 }
