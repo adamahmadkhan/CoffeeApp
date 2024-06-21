@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoffeeTypesCell: UICollectionViewCell {
+class CoffeeCategoryCell: UICollectionViewCell {
 
     @IBOutlet weak var titleOutlet: UILabel!
     @IBOutlet weak var mainViewOutlet: UIView!

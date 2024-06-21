@@ -65,8 +65,8 @@
 		A02E645C2BFF261F004526EA /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A02E645B2BFF261F004526EA /* JGProgressHUD */; };
 		A02E645F2BFF26B4004526EA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A02E645E2BFF26B4004526EA /* SDWebImage */; };
 		A02E64612BFF26B4004526EA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A02E64602BFF26B4004526EA /* SDWebImageMapKit */; };
-		A02E64692BFF2715004526EA /* CoffeeTypesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02E64622BFF2715004526EA /* CoffeeTypesCell.xib */; };
-		A02E646A2BFF2715004526EA /* CoffeeTypesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E64632BFF2715004526EA /* CoffeeTypesCell.swift */; };
+		A02E64692BFF2715004526EA /* CoffeeCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02E64622BFF2715004526EA /* CoffeeCategoryCell.xib */; };
+		A02E646A2BFF2715004526EA /* CoffeeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E64632BFF2715004526EA /* CoffeeCategoryCell.swift */; };
 		A02E646B2BFF2715004526EA /* ImageLoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E64642BFF2715004526EA /* ImageLoaderCell.swift */; };
 		A02E646C2BFF2715004526EA /* ImageLoaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02E64652BFF2715004526EA /* ImageLoaderCell.xib */; };
 		A02E646D2BFF2715004526EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02E64662BFF2715004526EA /* Main.storyboard */; };
@@ -102,8 +102,8 @@
 		A02E644F2BFF25AC004526EA /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A02E64502BFF25AC004526EA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A02E64512BFF25AD004526EA /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
-		A02E64622BFF2715004526EA /* CoffeeTypesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeTypesCell.xib; sourceTree = "<group>"; };
-		A02E64632BFF2715004526EA /* CoffeeTypesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeTypesCell.swift; sourceTree = "<group>"; };
+		A02E64622BFF2715004526EA /* CoffeeCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeCategoryCell.xib; sourceTree = "<group>"; };
+		A02E64632BFF2715004526EA /* CoffeeCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeCategoryCell.swift; sourceTree = "<group>"; };
 		A02E64642BFF2715004526EA /* ImageLoaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoaderCell.swift; sourceTree = "<group>"; };
 		A02E64652BFF2715004526EA /* ImageLoaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageLoaderCell.xib; sourceTree = "<group>"; };
 		A02E64662BFF2715004526EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 			children = (
 				A02E64672BFF2715004526EA /* CoffeeMenuCells.swift */,
 				A02E64682BFF2715004526EA /* CoffeeMenuCells.xib */,
-				A02E64632BFF2715004526EA /* CoffeeTypesCell.swift */,
-				A02E64622BFF2715004526EA /* CoffeeTypesCell.xib */,
+				A02E64632BFF2715004526EA /* CoffeeCategoryCell.swift */,
+				A02E64622BFF2715004526EA /* CoffeeCategoryCell.xib */,
 				A02E64642BFF2715004526EA /* ImageLoaderCell.swift */,
 				A02E64652BFF2715004526EA /* ImageLoaderCell.xib */,
 				A02E64662BFF2715004526EA /* Main.storyboard */,
@@ -380,7 +380,7 @@
 				A0FBD1D02C09D67F005CF973 /* MessageTvCell.xib in Resources */,
 				A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */,
 				A02E646F2BFF2715004526EA /* CoffeeMenuCells.xib in Resources */,
-				A02E64692BFF2715004526EA /* CoffeeTypesCell.xib in Resources */,
+				A02E64692BFF2715004526EA /* CoffeeCategoryCell.xib in Resources */,
 				A02E646D2BFF2715004526EA /* Main.storyboard in Resources */,
 				A00B35EE2BFF1C0B008B9A63 /* GoogleService-Info.plist in Resources */,
 				A029A3212BFF2E45002123F1 /* Assets.xcassets in Resources */,
@@ -398,7 +398,7 @@
 				A02E646E2BFF2715004526EA /* CoffeeMenuCells.swift in Sources */,
 				A02E64572BFF25AD004526EA /* ViewController.swift in Sources */,
 				A06E90372BFF1707004A1097 /* AppDelegate.swift in Sources */,
-				A02E646A2BFF2715004526EA /* CoffeeTypesCell.swift in Sources */,
+				A02E646A2BFF2715004526EA /* CoffeeCategoryCell.swift in Sources */,
 				A02E64532BFF25AD004526EA /* AuthScreenViewController.swift in Sources */,
 				A02E64552BFF25AD004526EA /* ImagePickerViewController.swift in Sources */,
 				A02E64442BFF2475004526EA /* AuthScreenViewModel.swift in Sources */,

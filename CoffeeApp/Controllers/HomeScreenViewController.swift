@@ -81,7 +81,7 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(collectionView == coffeeCategoryCvOutlet) {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CoffeeTypesCells", for: indexPath) as! CoffeeTypesCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "coffeeCategoryCell", for: indexPath) as! CoffeeCategoryCell
             return cell
         }
         else {
@@ -127,7 +127,7 @@ class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLay
     
     func readyController(){
         topBarImageView.layer.cornerRadius = 20
-        self.coffeeCategoryCvOutlet.register(UINib(nibName: "CoffeeTypesCell", bundle: nil), forCellWithReuseIdentifier: "CoffeeTypesCells")
+        self.coffeeCategoryCvOutlet.register(UINib(nibName: "CoffeeCategoryCell", bundle: nil), forCellWithReuseIdentifier: "coffeeCategoryCell")
         self.coffeeMenuCVOutlet.register(UINib(nibName: "CoffeeMenuCells", bundle: nil), forCellWithReuseIdentifier: "coffeMenuCell")
         bindingFunctions()
         viewModel.getAllProducts()
