@@ -16,7 +16,7 @@ import SDWebImage
 import Connectivity
 
 
-class HomeScreenViewController: UIViewController,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     
     

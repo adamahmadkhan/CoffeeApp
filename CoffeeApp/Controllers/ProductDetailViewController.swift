@@ -53,7 +53,7 @@ class ProductDetailViewController: UIViewController {
         descriptionMsgLabel.text = productDetail?.Description
         nameOutlet.text = productDetail?.name
         subTitleOutlet.text = "Default"
-        imageOutlet.kf.setImage(with: URL(string: productDetail!.image!))
+        imageOutlet.kf.setImage(with: URL(string: productDetail!.image ?? ""))
         bottomBarView.layer.cornerRadius = 25
         bottomBarView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         bottomBarView.layer.shadowColor = UIColor.black.cgColor

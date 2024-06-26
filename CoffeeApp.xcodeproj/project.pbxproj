@@ -77,8 +77,12 @@
 		A06E90412BFF1708004A1097 /* CoffeeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A06E903F2BFF1708004A1097 /* CoffeeApp.xcdatamodeld */; };
 		A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06E90442BFF170A004A1097 /* LaunchScreen.storyboard */; };
 		A0CBB22B2C09E0F7006853AB /* ChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CBB22A2C09E0F7006853AB /* ChatMessageViewController.swift */; };
+		A0F6C6A42C2567D70070F143 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A0F6C6A32C2567D70070F143 /* GoogleMobileAds */; };
+		A0F6C6A92C25AE160070F143 /* GoogleAdsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F6C6A72C25AE160070F143 /* GoogleAdsCells.swift */; };
+		A0F6C6AA2C25AE160070F143 /* GoogleAdsCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F6C6A82C25AE160070F143 /* GoogleAdsCells.xib */; };
 		A0FBD1CF2C09D67F005CF973 /* MessageTvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBD1CD2C09D67F005CF973 /* MessageTvCell.swift */; };
 		A0FBD1D02C09D67F005CF973 /* MessageTvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FBD1CE2C09D67F005CF973 /* MessageTvCell.xib */; };
+		A0FF70102C2A9982000D2A39 /* AdsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF700F2C2A9982000D2A39 /* AdsScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,8 +120,11 @@
 		A06E90452BFF170A004A1097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A06E90472BFF170A004A1097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0CBB22A2C09E0F7006853AB /* ChatMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageViewController.swift; sourceTree = "<group>"; };
+		A0F6C6A72C25AE160070F143 /* GoogleAdsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdsCells.swift; sourceTree = "<group>"; };
+		A0F6C6A82C25AE160070F143 /* GoogleAdsCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoogleAdsCells.xib; sourceTree = "<group>"; };
 		A0FBD1CD2C09D67F005CF973 /* MessageTvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTvCell.swift; sourceTree = "<group>"; };
 		A0FBD1CE2C09D67F005CF973 /* MessageTvCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTvCell.xib; sourceTree = "<group>"; };
+		A0FF700F2C2A9982000D2A39 /* AdsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +150,7 @@
 				A00B36222BFF1E35008B9A63 /* FirebaseRemoteConfigSwift in Frameworks */,
 				A00B36142BFF1E35008B9A63 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				A00B36062BFF1E35008B9A63 /* FirebaseDatabaseSwift in Frameworks */,
+				A0F6C6A42C2567D70070F143 /* GoogleMobileAds in Frameworks */,
 				A00B36102BFF1E35008B9A63 /* FirebaseFunctions in Frameworks */,
 				A00B36262BFF1E35008B9A63 /* FirebaseStorageCombine-Community in Frameworks */,
 				A00B36202BFF1E35008B9A63 /* FirebaseRemoteConfig in Frameworks */,
@@ -214,6 +222,7 @@
 				A02E644E2BFF25AC004526EA /* ImagePickerViewController.swift */,
 				A02E64502BFF25AC004526EA /* ViewController.swift */,
 				A0CBB22A2C09E0F7006853AB /* ChatMessageViewController.swift */,
+				A0FF700F2C2A9982000D2A39 /* AdsScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				A02E64672BFF2715004526EA /* CoffeeMenuCells.swift */,
+				A0F6C6A72C25AE160070F143 /* GoogleAdsCells.swift */,
+				A0F6C6A82C25AE160070F143 /* GoogleAdsCells.xib */,
 				A02E64682BFF2715004526EA /* CoffeeMenuCells.xib */,
 				A02E64632BFF2715004526EA /* CoffeeCategoryCell.swift */,
 				A02E64622BFF2715004526EA /* CoffeeCategoryCell.xib */,
@@ -322,6 +333,7 @@
 				A02E645E2BFF26B4004526EA /* SDWebImage */,
 				A02E64602BFF26B4004526EA /* SDWebImageMapKit */,
 				A01425E12C07004100D8AF15 /* Connectivity */,
+				A0F6C6A32C2567D70070F143 /* GoogleMobileAds */,
 			);
 			productName = CoffeeApp;
 			productReference = A06E90332BFF1707004A1097 /* CoffeeApp.app */;
@@ -361,6 +373,7 @@
 				A02E645A2BFF261F004526EA /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				A02E645D2BFF26B4004526EA /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				A01425E02C07004100D8AF15 /* XCRemoteSwiftPackageReference "Connectivity" */,
+				A0F6C6A22C2567D70070F143 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = A06E90342BFF1707004A1097 /* Products */;
 			projectDirPath = "";
@@ -378,6 +391,7 @@
 			files = (
 				A02E646C2BFF2715004526EA /* ImageLoaderCell.xib in Resources */,
 				A0FBD1D02C09D67F005CF973 /* MessageTvCell.xib in Resources */,
+				A0F6C6AA2C25AE160070F143 /* GoogleAdsCells.xib in Resources */,
 				A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */,
 				A02E646F2BFF2715004526EA /* CoffeeMenuCells.xib in Resources */,
 				A02E64692BFF2715004526EA /* CoffeeCategoryCell.xib in Resources */,
@@ -397,6 +411,7 @@
 				A02E64452BFF2475004526EA /* HomeScreenViewModel.swift in Sources */,
 				A02E646E2BFF2715004526EA /* CoffeeMenuCells.swift in Sources */,
 				A02E64572BFF25AD004526EA /* ViewController.swift in Sources */,
+				A0FF70102C2A9982000D2A39 /* AdsScreenViewController.swift in Sources */,
 				A06E90372BFF1707004A1097 /* AppDelegate.swift in Sources */,
 				A02E646A2BFF2715004526EA /* CoffeeCategoryCell.swift in Sources */,
 				A02E64532BFF25AD004526EA /* AuthScreenViewController.swift in Sources */,
@@ -407,6 +422,7 @@
 				A02E64462BFF2475004526EA /* AddProductViewModel.swift in Sources */,
 				A02E64582BFF25AD004526EA /* HomeScreenViewController.swift in Sources */,
 				A001BD7B2C085261000EA8AC /* Observers.swift in Sources */,
+				A0F6C6A92C25AE160070F143 /* GoogleAdsCells.swift in Sources */,
 				A0FBD1CF2C09D67F005CF973 /* MessageTvCell.swift in Sources */,
 				A02E643E2BFF2461004526EA /* ProductModel.swift in Sources */,
 				A02E646B2BFF2715004526EA /* ImageLoaderCell.swift in Sources */,
@@ -576,6 +592,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = temp.CoffeeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -607,6 +625,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = temp.CoffeeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -712,6 +732,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.19.2;
+			};
+		};
+		A0F6C6A22C2567D70070F143 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -906,6 +934,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A02E645D2BFF26B4004526EA /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		A0F6C6A32C2567D70070F143 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0F6C6A22C2567D70070F143 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -13,8 +13,9 @@ import FirebaseStorage
 import JGProgressHUD
 import Connectivity
 import Photos
+import GoogleMobileAds
 
-class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, GADBannerViewDelegate {
     
     
     
@@ -22,14 +23,16 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     //MARK: Outlets
     @IBOutlet weak var imageViewCvOutelet: UICollectionView!
     @IBOutlet weak var galleryBtnOutlet: UIButton!
+    //@IBOutlet weak var addBannerViewOutlet: UIView!
     @IBOutlet weak var uploadBtnOutlet: UIButton!
+    
     
     
     
     
     //MARK: Variables
     //let serialQueue = DispatchQueue(label: "my.Label.com")
-//    let connectivity: Connectivity = Connectivity()
+    //    let connectivity: Connectivity = Connectivity()
     //let reachability = try! Reachability()
     var viewModel = ImagePickerViewModel()
     var hudProgress: JGProgressHUD?
@@ -39,19 +42,21 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     var uploadedImages = [UIImage]()
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         readyController()
         bindingFunctions()
-      
+        
+        
         //imageViewCvOutelet.allowsMultipleSelection = false
         //connectivity.connectivityURLs = [URL(string: "https://www.google.com/")!]
         //        connectivity.isPollingEnabled = true
         //        connectivity.pollingInterval = 2
         //        configureConnectivityNotifier()
         //        connectivity.startNotifier()
-        
     }
     
     //MARK: Image pickers Functions
@@ -91,6 +96,10 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/3 - 10 , height: 150)
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 200)
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if viewModel.isLoading.value! {
@@ -98,52 +107,62 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
             cell.mainViewOutlet.showAnimatedGradientSkeleton()
             return cell
         }
-        
         else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageLoaderCells", for: indexPath) as! ImageLoaderCell
-            cell.mainViewOutlet.stopSkeletonAnimation()
-            cell.isUploadedIcon.isHidden = true
-            cell.progressBar.isHidden  = true
-            cell.percentageOutlet.isHidden = true
-            cell.mainViewOutlet.backgroundColor = .white
-            cell.imageViewOutlet.image = viewModel.images.value?[indexPath.row]
-            cell.hideSkeleton()
-            if imageViewCvOutelet.indexPathsForSelectedItems!.contains(indexPath){
-                cell.mainViewOutlet.backgroundColor = .blue
-                if indexPath.row == currentlyUploading {
-                    cell.percentageOutlet.isHidden = false
-                    cell.progressBar.isHidden = false
-                }
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageLoaderCells", for: indexPath) as! ImageLoaderCell
+                cell.mainViewOutlet.stopSkeletonAnimation()
+                cell.isUploadedIcon.isHidden = true
+                cell.progressBar.isHidden  = true
+                cell.percentageOutlet.isHidden = true
+                cell.mainViewOutlet.backgroundColor = .white
+                cell.imageViewOutlet.image = viewModel.images.value?[indexPath.row]
+                cell.hideSkeleton()
+                if imageViewCvOutelet.indexPathsForSelectedItems!.contains(indexPath){
+                    cell.mainViewOutlet.backgroundColor = .blue
+                    if indexPath.row == currentlyUploading {
+                        cell.percentageOutlet.isHidden = false
+                        cell.progressBar.isHidden = false
+                    }
                     else {
                         cell.percentageOutlet.isHidden = true
                         cell.progressBar.isHidden = true
                     }
+                }
+                else {
+                    cell.mainViewOutlet.backgroundColor = .white
+                }
+                if  uploadedImages.contains(viewModel.images.value![indexPath.row]){
+                    cell.isUploadedIcon.isHidden = false
+                }
+                else {
+                    cell.isUploadedIcon.isHidden = true
+                }
+                return cell
             }
-            else {
-                cell.mainViewOutlet.backgroundColor = .white
-            }
-            if  uploadedImages.contains(viewModel.images.value![indexPath.row]){
-                cell.isUploadedIcon.isHidden = false
-            }
-            else {
-                cell.isUploadedIcon.isHidden = true
-            }
-            return cell
-        }
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter , withReuseIdentifier: "googleAdsCells", for: indexPath) as! GoogleAdsCells
+        cell.banner.frame.size = CGSize(width:  collectionView.frame.width, height: 200)
+            cell.banner.rootViewController = self
+            return cell
+        
+    }
+
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? ImageLoaderCell {
-        selectedCellsIndices.append(indexPath)
-        viewModel.imagesToUpload.append(cell.imageViewOutlet.image!)
-        cell.mainViewOutlet.backgroundColor = .blue
+            selectedCellsIndices.append(indexPath)
+            viewModel.imagesToUpload.append(cell.imageViewOutlet.image!)
+            cell.mainViewOutlet.backgroundColor = .blue
         }
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? ImageLoaderCell {
-        viewModel.imagesToUpload = viewModel.imagesToUpload.filter { $0 != cell.imageViewOutlet.image }
-        selectedCellsIndices = selectedCellsIndices.filter{ $0 != indexPath }
-        cell.mainViewOutlet.backgroundColor = .white
-       }
+            viewModel.imagesToUpload = viewModel.imagesToUpload.filter { $0 != cell.imageViewOutlet.image }
+            selectedCellsIndices = selectedCellsIndices.filter{ $0 != indexPath }
+            cell.mainViewOutlet.backgroundColor = .white
+        }
     }
     
     
@@ -165,7 +184,7 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
         }
         initialzeUpload()
     }
-        
+    
     func initialzeUpload() {
         let cell = imageViewCvOutelet.cellForItem(at: selectedCellsIndices[currentlyUploading]) as? ImageLoaderCell
         //cell?.loaderOutlet.startAnimating()
@@ -235,6 +254,8 @@ class ImagePickerViewController: UIViewController, PHPickerViewControllerDelegat
     func readyController(){
         self.imageViewCvOutelet.allowsMultipleSelection = true
         self.imageViewCvOutelet.register(UINib(nibName: "ImageLoaderCell" , bundle: nil), forCellWithReuseIdentifier: "imageLoaderCells")
+        self.imageViewCvOutelet.register(UINib(nibName: "GoogleAdsCells", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "googleAdsCells")
+
         uploadBtnOutlet.isEnabled = true
         hudProgress = JGProgressHUD()
         viewModel.isLoading.bind {[self] loading in

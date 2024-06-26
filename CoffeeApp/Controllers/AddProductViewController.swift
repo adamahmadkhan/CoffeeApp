@@ -7,9 +7,10 @@
 
 import UIKit
 import JGProgressHUD
+import GoogleMobileAds
 
 
-class AddProductViewController: UIViewController, UITextViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddProductViewController: UIViewController, UITextViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate, GADFullScreenContentDelegate, UINavigationControllerDelegate {
     
     //MARK: Outlet
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -17,12 +18,13 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
     @IBOutlet weak var priceTfOutlet: UITextField!
     @IBOutlet weak var uploadedImage: UIImageView!
     @IBOutlet weak var height: NSLayoutConstraint!
-    
-    
+    @IBOutlet weak var outterView: UIView!
+    @IBOutlet weak var innerView: UIView!
     
     //MARK: Variables
     var viewModel = AddProductViewModel()
     var hudProgress: JGProgressHUD?
+    var interstitial: GADInterstitialAd?
     
     
     
@@ -34,8 +36,18 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
         super.viewDidLoad()
         readyController()
         bindlingFunctions()
-        
+        Task {
+            await loadAd()
+            
+            //interstitial?.present(fromRootViewController: self)
+        }
+       
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        interstitial?.present(fromRootViewController: self)
+    }
+    
+ 
     //MARK: Buttons calls
     @IBAction func addProductPressed(_ sender: UIButton) {
         if let data = uploadedImage.image!.pngData() {
@@ -66,6 +78,7 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
         else if textField == priceTfOutlet
         {
             viewModel.productPrice = priceTfOutlet.text
+            
         }
     }
     
@@ -83,11 +96,19 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
             uploadedImage.image = image
         }
         self.dismiss(animated: true)
+       
     }
     
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        Task{
+            await loadAd()
+        }
+    }
+    func adWillDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+       
+    }
     
-    
-    func readyController(){
+    func readyController() {
         height.constant = descriptionTextView.contentSize.height
         descriptionTextView.delegate = self
         nameTfOutlet.delegate = self
@@ -97,6 +118,14 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
         viewModel.productDescription = descriptionTextView.text
         viewModel.productPrice = priceTfOutlet.text
     }
+    func loadAd() async {
+        do {
+              interstitial = try await GADInterstitialAd.load(withAdUnitID: "ca-app-pub-3940256099942544/5135589807", request: GADRequest())
+              interstitial?.fullScreenContentDelegate = self
+            } catch {
+              print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+            }
+    }
     func bindlingFunctions(){
         viewModel.isLoading.bind {[self] loading in
             if loading {
@@ -104,7 +133,7 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
             }
             else {
                 hudProgress!.dismiss(afterDelay: 1, animated: true)
-                
+                interstitial?.present(fromRootViewController: self)
             }
         }
     }

@@ -1,24 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProgressBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T88-hD-tEM">
+                                <rect key="frame" x="20" y="603" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FF5-bV-Dyu">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fv-wM-PK2">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="mnK-2N-LVf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="6Zm-Uh-Wfm"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1fv-wM-PK2" secondAttribute="trailing" id="ccc-e7-XBa"/>
+                                    <constraint firstItem="1fv-wM-PK2" firstAttribute="top" secondItem="FF5-bV-Dyu" secondAttribute="top" id="nju-uB-NR5"/>
+                                    <constraint firstAttribute="bottom" secondItem="1fv-wM-PK2" secondAttribute="bottom" id="oSL-hb-sCy"/>
+                                    <constraint firstAttribute="height" constant="250" id="vId-1O-lBh"/>
+                                    <constraint firstItem="1fv-wM-PK2" firstAttribute="leading" secondItem="FF5-bV-Dyu" secondAttribute="leading" id="wgf-g6-7ZQ"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ik1-g3-tUu">
+                                <rect key="frame" x="18" y="657" width="378" height="31"/>
+                                <connections>
+                                    <action selector="siderValueChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="ITI-m0-vsn"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taI-eB-Fkr">
+                                <rect key="frame" x="82" y="130" width="200" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="square.and.arrow.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QUC-6o-SG7">
+                                        <rect key="frame" x="0.0" y="-1" width="20" height="21"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="F36-Gr-PFB"/>
+                                            <constraint firstAttribute="height" constant="20" id="p6m-DJ-T0o"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="FvB-lg-GxO"/>
+                                    <constraint firstAttribute="height" constant="150" id="axD-si-Vbr"/>
+                                    <constraint firstItem="QUC-6o-SG7" firstAttribute="top" secondItem="taI-eB-Fkr" secondAttribute="top" id="ebF-3q-WWy"/>
+                                    <constraint firstItem="QUC-6o-SG7" firstAttribute="leading" secondItem="taI-eB-Fkr" secondAttribute="leading" id="nZB-ZF-p02"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="U34-Z4-pGG" appends="YES" id="zgG-Wn-Nka"/>
+                                    <outletCollection property="gestureRecognizers" destination="QAH-1J-jAt" appends="YES" id="54b-vt-Bcj"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="T88-hD-tEM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="82l-Rn-qr1"/>
+                            <constraint firstItem="taI-eB-Fkr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="8hq-iW-VbI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T88-hD-tEM" secondAttribute="trailing" constant="20" id="Gvs-gQ-hx2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ik1-g3-tUu" secondAttribute="trailing" constant="20" id="HMr-yM-nXS"/>
+                            <constraint firstItem="T88-hD-tEM" firstAttribute="top" secondItem="FF5-bV-Dyu" secondAttribute="bottom" constant="30" id="JEZ-ev-mc8"/>
+                            <constraint firstItem="Ik1-g3-tUu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JHJ-Fp-FJx"/>
+                            <constraint firstItem="taI-eB-Fkr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="OXY-h1-9Zd"/>
+                            <constraint firstItem="FF5-bV-Dyu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kkI-NA-n54"/>
+                            <constraint firstItem="FF5-bV-Dyu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tVD-MH-VbE"/>
+                            <constraint firstItem="Ik1-g3-tUu" firstAttribute="top" secondItem="T88-hD-tEM" secondAttribute="bottom" constant="20" id="u5o-rL-oio"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gestureViewOutlet" destination="taI-eB-Fkr" id="xef-0w-d8d"/>
+                        <outlet property="progressViewBackground" destination="FF5-bV-Dyu" id="eHn-iB-JVh"/>
+                        <outlet property="progressViewValue" destination="mnK-2N-LVf" id="mFh-hh-3qZ"/>
+                        <outlet property="silderOutlet" destination="Ik1-g3-tUu" id="LiN-5w-euc"/>
+                        <outlet property="updateProgressValue" destination="T88-hD-tEM" id="clz-0k-W5l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="U34-Z4-pGG">
+                    <connections>
+                        <action selector="handlePinch:" destination="BYZ-38-t0r" id="AY6-Ca-btB"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="QAH-1J-jAt">
+                    <connections>
+                        <action selector="handleRolation:" destination="BYZ-38-t0r" id="qtg-it-1xX"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-47.826086956521742" y="3.3482142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

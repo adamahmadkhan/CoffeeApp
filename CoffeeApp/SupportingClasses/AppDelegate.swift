@@ -10,6 +10,7 @@ import CoreData
 import FirebaseCore
 import IQKeyboardManagerSwift
 import GoogleSignIn
+import GoogleMobileAds
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -21,9 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         //let config = GIDConfiguration(clientID: "509206412043-evbon8536fomc0256rut00efg0ddkdk6.apps.googleusercontent.com")
-        
-
+        //GADMobileAds.sharedInstance().start(completionHandler: nil)
+        //GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "2077ef9a63d2b398840261c8221a0c9b" ]
         // Create Google Sign In configuration object.
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+//        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "57462c18411607806813b56c4cb8e5dd" ]
        
         return true
     }
