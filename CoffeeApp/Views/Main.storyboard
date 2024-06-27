@@ -461,7 +461,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYp-YQ-gMC">
-                                <rect key="frame" x="107" y="428" width="200" height="40"/>
+                                <rect key="frame" x="107" y="548" width="200" height="40"/>
                                 <color key="backgroundColor" name="buttonBackGroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WFp-Nr-na4"/>
@@ -475,7 +475,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THg-je-a2a">
-                                <rect key="frame" x="107" y="368" width="200" height="40"/>
+                                <rect key="frame" x="107" y="488" width="200" height="40"/>
                                 <color key="backgroundColor" name="buttonBackGroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="hyY-hY-KI2"/>
@@ -489,7 +489,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBj-XX-qTf">
-                                <rect key="frame" x="107" y="308" width="200" height="40"/>
+                                <rect key="frame" x="107" y="428" width="200" height="40"/>
                                 <color key="backgroundColor" name="buttonBackGroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="LMd-sm-fno"/>
@@ -503,7 +503,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZv-0c-jcO">
-                                <rect key="frame" x="107" y="248" width="200" height="40"/>
+                                <rect key="frame" x="107" y="368" width="200" height="40"/>
                                 <color key="backgroundColor" name="buttonBackGroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2Uy-bU-rUx"/>
@@ -516,18 +516,29 @@
                                     <action selector="rewardedAdsBtnPressed:" destination="faU-Be-NZ6" eventType="touchUpInside" id="MKz-Mj-Nre"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXq-4C-D9m">
+                                <rect key="frame" x="107" y="313" width="200" height="35"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Native"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rqt-er-jro"/>
                         <color key="backgroundColor" name="screenBackGroundColor"/>
                         <constraints>
                             <constraint firstItem="XZv-0c-jcO" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="0Qp-AI-K9n"/>
+                            <constraint firstItem="hBj-XX-qTf" firstAttribute="centerY" secondItem="4iD-1S-iiY" secondAttribute="centerY" id="2Tp-tQ-I9H"/>
                             <constraint firstItem="THg-je-a2a" firstAttribute="top" secondItem="hBj-XX-qTf" secondAttribute="bottom" constant="20" id="CyU-qg-mqT"/>
                             <constraint firstItem="THg-je-a2a" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="GEF-xP-NyA"/>
                             <constraint firstItem="hBj-XX-qTf" firstAttribute="top" secondItem="XZv-0c-jcO" secondAttribute="bottom" constant="20" id="NGM-j6-wwY"/>
+                            <constraint firstItem="gXq-4C-D9m" firstAttribute="height" secondItem="XZv-0c-jcO" secondAttribute="height" multiplier="0.875" id="Sp2-g9-KZS"/>
+                            <constraint firstItem="gXq-4C-D9m" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="a1C-Cq-qLh"/>
                             <constraint firstItem="zYp-YQ-gMC" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="a5S-H1-tmQ"/>
                             <constraint firstItem="zYp-YQ-gMC" firstAttribute="top" secondItem="THg-je-a2a" secondAttribute="bottom" constant="20" id="g0q-ng-BH1"/>
-                            <constraint firstItem="zYp-YQ-gMC" firstAttribute="centerY" secondItem="4iD-1S-iiY" secondAttribute="centerY" id="gfe-Ll-DvQ"/>
+                            <constraint firstItem="gXq-4C-D9m" firstAttribute="width" secondItem="XZv-0c-jcO" secondAttribute="width" id="jbv-DX-aOQ"/>
                             <constraint firstItem="hBj-XX-qTf" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="nN4-r7-4kN"/>
+                            <constraint firstItem="XZv-0c-jcO" firstAttribute="top" secondItem="gXq-4C-D9m" secondAttribute="bottom" constant="20" id="xFb-zt-Kv8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="wrench.adjustable.fill" catalog="system" id="tPo-B6-rMd"/>
@@ -898,6 +909,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

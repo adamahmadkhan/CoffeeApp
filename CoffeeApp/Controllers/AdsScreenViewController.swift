@@ -16,7 +16,8 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     var videoInterstitial: GADInterstitialAd?
     var interstitial: GADInterstitialAd?
     var adaptiveBannerView: GADBannerView!
-    var rewardedAd: GADRewardedAd?
+    var rewardedAd: GADRewardedInterstitialAd?
+    var collapsibleBanner : GADBannerView!
     var appOpenAd: GADAppOpenAd?
     var isLoadingAd = false
     var isShowingAd = false
@@ -82,18 +83,25 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     
     @IBAction func rewardedAdsBtnPressed(_ sender: UIButton) {
         rewardedAd?.present(fromRootViewController: self, userDidEarnRewardHandler: {
-            
+            print("Reward Earned")
         })
-    
+        Task{
+            await loadRewardedAd()
+        }
     }
     
     
     
     
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        Task{
-            await loadInterstitial()
-        }
+        
+        
+    }
+    
+    
+    
+    @IBAction func videoInterstitialBtnPressed(_ sender: Any) {
+        videoInterstitial?.present(fromRootViewController: self)
         Task {
             await loadVideoInterstitial()
         }
@@ -101,14 +109,11 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     
     
     
-    @IBAction func videoInterstitialBtnPressed(_ sender: Any) {
-        videoInterstitial?.present(fromRootViewController: self)
-    }
-    
-    
-    
     @IBAction func interstitialBtnPressed(_ sender: UIButton) {
         interstitial?.present(fromRootViewController: self)
+        Task{
+            await loadInterstitial()
+        }
     }
     
     
@@ -117,11 +122,19 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
         //showOpenAd()
     }
     
+    func collapableBannerAds(){
+        
+    }
+    
+    
+    
     
     func adaptiveBannerAd(){
         
         let adaptiveSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(view.frame.inset(by: view.safeAreaInsets).width)
+        
         adaptiveBannerView = GADBannerView(adSize: adaptiveSize)
+        adaptiveBannerView.layer.cornerRadius = 10
         addBannerViewToView(adaptiveBannerView)
     }
     
@@ -132,27 +145,30 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)
         view.addConstraints( [NSLayoutConstraint(item: bannerView,
-                                                 attribute: .bottom,
+                                                 attribute: .top,
                                                  relatedBy: .equal,
                                                  toItem: view.safeAreaLayoutGuide,
-                                                 attribute: .bottom,
+                                                 attribute: .top,
                                                  multiplier: 1,
                                                  constant: 0),
-                              NSLayoutConstraint(item: bannerView,
+                              
+                             NSLayoutConstraint(item: bannerView,
                                                  attribute: .centerX,
                                                  relatedBy: .equal,
-                                                 toItem: view,
+                                                 toItem: view.safeAreaLayoutGuide,
                                                  attribute: .centerX,
                                                  multiplier: 1,
-                                                 constant: 0)])
+                                                 constant: 0),
+        ])
     }
     
     func loadRewardedAd() async {
         do {
-            rewardedAd = try await GADRewardedAd.load(
-                withAdUnitID: "ca-app-pub-3940256099942544/1712485313", request: GADRequest())
+            rewardedAd = try await GADRewardedInterstitialAd.load(
+                withAdUnitID: "ca-app-pub-3940256099942544/6978759866", request: GADRequest())
+            self.rewardedAd?.fullScreenContentDelegate = self
         } catch {
-            print("Rewarded ad failed to load with error: \(error.localizedDescription)")
+            print("Failed to load rewarded interstitial ad with error: \(error.localizedDescription)")
         }
     }
     
