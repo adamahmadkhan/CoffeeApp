@@ -17,11 +17,13 @@ class ChatScreenViewModel {
     let ref = Database.database().reference()
     
     init(){
-        
+        observeMessages()
     }
     
     func sendMessages(_ message: String){
-        self.ref.child("Messages").childByAutoId().setValue(message)
+        let time = "\(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short))"
+        let messageDict = MessageDataModel(message: message, time: time, sender: "adam", reciever: "reciever").toDictionary() as NSDictionary
+        self.ref.child("Messages").childByAutoId().setValue(messageDict)
         
     }
     func recieveMessages(_ message: String){
@@ -33,11 +35,15 @@ class ChatScreenViewModel {
                 print("Error fetching data: \(error)")
                 return
             }
-
+            
             if let snapshotData = snapshot?.value as? [String: Any] {
                 let messagesData = snapshotData.compactMap{ data in
-                    let message = data.value as? String
-                    return MessageDataModel(message: message, time: "", sender: "", reciever: "")
+                    let messageData = data.value as? [String:Any]
+                    let message = messageData?["message"] as? String
+                    let time = messageData?["time"] as? String
+                    let sender = messageData?["sender"] as? String
+                    let reciver = messageData?["reciever"] as? String
+                    return MessageDataModel(message: message, time: time, sender: sender, reciever: reciver)
                 }
                 self.messages.value = messagesData
             } else {
@@ -45,5 +51,18 @@ class ChatScreenViewModel {
             }
         }
     }
-
-}
+    func observeMessages() {
+        ref.child("Messages").observe(.childAdded) { snapshot in
+            if let messageData = snapshot.value as? [String:Any] {
+                let message = messageData["message"] as? String
+                let time = messageData["time"] as? String
+                let sender = messageData["sender"] as? String
+                let reciver = messageData["reciever"] as? String
+                self.messages.value?.append(MessageDataModel(message: message, time: time, sender: sender, reciever: reciver))
+            }
+            
+            
+            }
+        }
+    }
+ 

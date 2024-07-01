@@ -26,6 +26,4 @@ public struct Observers<T> {
         listener(value!)
         self.listener = listener
     }
-    
-    
 }

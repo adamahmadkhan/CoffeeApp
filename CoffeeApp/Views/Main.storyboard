@@ -274,17 +274,19 @@
             </objects>
             <point key="canvasLocation" x="4120" y="940"/>
         </scene>
-        <!--Chat Message View Controller-->
+        <!--Chat Screen View Controller-->
         <scene sceneID="M7d-2s-0dY">
             <objects>
-                <viewController id="CFh-Q7-Daj" customClass="ChatMessageViewController" customModule="CoffeeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CFh-Q7-Daj" customClass="ChatScreenViewController" customModule="CoffeeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Lj-9H-IQo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pff-8t-Ke3">
                                 <rect key="frame" x="20" y="68" width="374" height="552"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="screenBackGroundColor"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Qry-Z8-dDy"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="TgQ-y0-AxA"/>
                                 <connections>
                                     <outlet property="dataSource" destination="CFh-Q7-Daj" id="x9H-xi-qPG"/>
                                     <outlet property="delegate" destination="CFh-Q7-Daj" id="dE4-S4-7RS"/>
@@ -310,6 +312,9 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Send"/>
+                                <connections>
+                                    <action selector="sendBtnPressed:" destination="CFh-Q7-Daj" eventType="touchUpInside" id="lWq-M4-XgV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iCA-jd-rZ4"/>
@@ -328,6 +333,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="message.fill" catalog="system" id="LZq-q8-ECV"/>
                     <connections>
+                        <outlet property="messageBoxTextView" destination="yx7-bz-G05" id="WvZ-2W-udd"/>
                         <outlet property="messagesTableViewOutlet" destination="Pff-8t-Ke3" id="TVn-xo-25S"/>
                     </connections>
                 </viewController>

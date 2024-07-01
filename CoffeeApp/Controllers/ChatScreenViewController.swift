@@ -16,8 +16,8 @@ class ChatScreenViewController: UIViewController,UITableViewDelegate,UITableView
     
     //MARK: variables
     @IBOutlet weak var messageBoxTextView: UITextView!
-    var viewModel = ChatMessageViewModel()
-    
+    var viewModel = ChatScreenViewModel()
+    var messages = [MessageDataModel]()
     
     
     
@@ -26,41 +26,36 @@ class ChatScreenViewController: UIViewController,UITableViewDelegate,UITableView
         super.viewDidLoad()
         self.messagesTableViewOutlet.register(UINib(nibName: "MessageTvCell", bundle: nil), forCellReuseIdentifier: "messageTvCell")
         self.messageBoxTextView.delegate = self
+        viewModel.fetchMessages()
+        
         viewModel.messages.bind { data in
-            print(data)
+            self.messages = data
             self.messagesTableViewOutlet.reloadData()
         }
-        viewModel.messageObserver { data in
-            print(data)
-        }
     }
-    override func viewDidAppear(_ animated: Bool) {
-        viewModel.messageObserver { data in
-            print(data)
-        }
-    }
+
     
     
     
     @IBAction func sendBtnPressed(_ sender: UIButton) {
         if messageBoxTextView.text != "" &&  messageBoxTextView.text != nil
         {
+            let time = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
+            let message = MessageDataModel(message: messageBoxTextView.text, time: time, sender: "adam", reciever: "reciever")
             viewModel.sendMessages(messageBoxTextView.text)
         }
         messageBoxTextView.text = ""
     }
     
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.messages.value?.count ?? 0
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageTvCell", for: indexPath) as! MessageTvCell
-        cell.receivingViewOutlet.isHidden = true
         cell.sendingViewOutlet.isHidden = false
-        cell.sendingMessage.text = viewModel.messages.value?[indexPath.row].message
+        cell.sendingMessage.text = messages[indexPath.row].message
 //        if Int(indexPath.row) % 2 == 0{
 //            cell.receivingViewOutlet.isHidden = true
 //        }

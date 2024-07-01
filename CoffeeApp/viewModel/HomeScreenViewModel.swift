@@ -8,12 +8,13 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
-let db = Firestore.firestore()
+
 
 
 class HomeScreenViewModel {
     var isLoading: DynamicType<Bool> = DynamicType<Bool>()
     var products: DynamicType<[ProductModel]> = DynamicType<[ProductModel]>()
+    let db = Firestore.firestore()
     
     init(){
         self.isLoading.value = false
