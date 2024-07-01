@@ -27,10 +27,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfk-9v-ZrV">
+                                <rect key="frame" x="5" y="92.666666666666671" width="28" height="14.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.32659294937073113" green="0.91248760048162625" blue="0.34901960784313724" alpha="0.80516021105707913" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Cfk-9v-ZrV" firstAttribute="leading" secondItem="ZaJ-K0-Aq3" secondAttribute="leading" constant="5" id="4Q2-pc-9XR"/>
                             <constraint firstItem="PDH-dB-Idg" firstAttribute="leading" secondItem="ZaJ-K0-Aq3" secondAttribute="leading" constant="10" id="8kE-nc-wVf"/>
+                            <constraint firstAttribute="bottom" secondItem="Cfk-9v-ZrV" secondAttribute="bottom" constant="5" id="9aW-rH-Ulu"/>
                             <constraint firstAttribute="bottom" secondItem="PDH-dB-Idg" secondAttribute="bottom" constant="10" id="PUp-P7-6Zh"/>
                             <constraint firstAttribute="trailing" secondItem="PDH-dB-Idg" secondAttribute="trailing" constant="10" id="gdf-xc-KdE"/>
                             <constraint firstItem="PDH-dB-Idg" firstAttribute="top" secondItem="ZaJ-K0-Aq3" secondAttribute="top" constant="10" id="r7f-Qv-6vd"/>
@@ -47,8 +55,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="sendingMessage" destination="PDH-dB-Idg" id="RkL-6G-QVi"/>
-                <outlet property="sendingViewOutlet" destination="ZaJ-K0-Aq3" id="3lp-b5-qfq"/>
+                <outlet property="sendMessageLabelOutlet" destination="PDH-dB-Idg" id="RkL-6G-QVi"/>
+                <outlet property="sendMessageViewOutlet" destination="ZaJ-K0-Aq3" id="3lp-b5-qfq"/>
+                <outlet property="timeLabelOutet" destination="Cfk-9v-ZrV" id="tdN-3h-XwS"/>
             </connections>
             <point key="canvasLocation" x="-6.8702290076335872" y="47.183098591549296"/>
         </tableViewCell>

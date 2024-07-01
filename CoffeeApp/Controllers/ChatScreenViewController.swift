@@ -41,7 +41,6 @@ class ChatScreenViewController: UIViewController,UITableViewDelegate,UITableView
         if messageBoxTextView.text != "" &&  messageBoxTextView.text != nil
         {
             let time = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
-            let message = MessageDataModel(message: messageBoxTextView.text, time: time, sender: "adam", reciever: "reciever")
             viewModel.sendMessages(messageBoxTextView.text)
         }
         messageBoxTextView.text = ""
@@ -54,8 +53,9 @@ class ChatScreenViewController: UIViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageTvCell", for: indexPath) as! MessageTvCell
-        cell.sendingViewOutlet.isHidden = false
-        cell.sendingMessage.text = messages[indexPath.row].message
+        cell.sendMessageViewOutlet.isHidden = false
+        cell.sendMessageLabelOutlet.text = messages[indexPath.row].message
+        cell.timeLabelOutet.text = messages[indexPath.row].time
 //        if Int(indexPath.row) % 2 == 0{
 //            cell.receivingViewOutlet.isHidden = true
 //        }

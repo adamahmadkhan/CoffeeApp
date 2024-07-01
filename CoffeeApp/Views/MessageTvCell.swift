@@ -8,13 +8,13 @@
 import UIKit
 
 class MessageTvCell: UITableViewCell {
-    @IBOutlet weak var sendingViewOutlet: UIView!
-    @IBOutlet weak var sendingMessage: UILabel!
-    
+    @IBOutlet weak var sendMessageViewOutlet: UIView!
+    @IBOutlet weak var sendMessageLabelOutlet: UILabel!
+    @IBOutlet weak var timeLabelOutet: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        sendingViewOutlet.layer.cornerRadius = 10
+        sendMessageViewOutlet.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
