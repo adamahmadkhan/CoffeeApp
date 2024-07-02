@@ -77,10 +77,6 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     //            ad.present(fromRootViewController: self)
     //          }
     //    }
-    
-    
-    
-    
     @IBAction func rewardedAdsBtnPressed(_ sender: UIButton) {
         rewardedAd?.present(fromRootViewController: self, userDidEarnRewardHandler: {
             print("Reward Earned")

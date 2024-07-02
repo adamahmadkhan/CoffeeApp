@@ -58,6 +58,21 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLa
 //            }
         }
     
+    
+    @IBAction func openSlideMenuBtnClicked(_ sender: UIButton) {
+        let sideMenu = self.storyboard?.instantiateViewController(withIdentifier: "sideMenu") as! SideMenuViewController
+        sideMenu.modalTransitionStyle = .crossDissolve
+        sideMenu.modalPresentationStyle = .overFullScreen
+        present(sideMenu, animated: true)
+        sideMenu.onDismissedClosure = {
+            self.dismiss(animated: true)
+        }
+        
+    }
+    
+    
+    
+    
     //MARK: Collection View functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == coffeeMenuCVOutlet{

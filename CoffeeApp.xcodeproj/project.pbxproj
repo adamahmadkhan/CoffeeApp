@@ -84,6 +84,9 @@
 		A0FBD1CF2C09D67F005CF973 /* MessageTvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBD1CD2C09D67F005CF973 /* MessageTvCell.swift */; };
 		A0FBD1D02C09D67F005CF973 /* MessageTvCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FBD1CE2C09D67F005CF973 /* MessageTvCell.xib */; };
 		A0FCE54F2C3283F9009F6DFF /* MessageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FCE54E2C3283F9009F6DFF /* MessageDataModel.swift */; };
+		A0FD7F702C33DA9800896E0C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD7F6F2C33DA9800896E0C /* SideMenuViewController.swift */; };
+		A0FD7F732C34210500896E0C /* SideMenuCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD7F712C34210500896E0C /* SideMenuCells.swift */; };
+		A0FD7F742C34210500896E0C /* SideMenuCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FD7F722C34210500896E0C /* SideMenuCells.xib */; };
 		A0FF70102C2A9982000D2A39 /* AdsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF700F2C2A9982000D2A39 /* AdsScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +131,9 @@
 		A0FBD1CD2C09D67F005CF973 /* MessageTvCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTvCell.swift; sourceTree = "<group>"; };
 		A0FBD1CE2C09D67F005CF973 /* MessageTvCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTvCell.xib; sourceTree = "<group>"; };
 		A0FCE54E2C3283F9009F6DFF /* MessageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataModel.swift; sourceTree = "<group>"; };
+		A0FD7F6F2C33DA9800896E0C /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		A0FD7F712C34210500896E0C /* SideMenuCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCells.swift; sourceTree = "<group>"; };
+		A0FD7F722C34210500896E0C /* SideMenuCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCells.xib; sourceTree = "<group>"; };
 		A0FF700F2C2A9982000D2A39 /* AdsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +235,7 @@
 				A02E64502BFF25AC004526EA /* ViewController.swift */,
 				A0CBB22A2C09E0F7006853AB /* ChatScreenViewController.swift */,
 				A0FF700F2C2A9982000D2A39 /* AdsScreenViewController.swift */,
+				A0FD7F6F2C33DA9800896E0C /* SideMenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +255,8 @@
 				A06E90442BFF170A004A1097 /* LaunchScreen.storyboard */,
 				A0FBD1CD2C09D67F005CF973 /* MessageTvCell.swift */,
 				A0FBD1CE2C09D67F005CF973 /* MessageTvCell.xib */,
+				A0FD7F712C34210500896E0C /* SideMenuCells.swift */,
+				A0FD7F722C34210500896E0C /* SideMenuCells.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -402,6 +411,7 @@
 				A02E646F2BFF2715004526EA /* CoffeeMenuCells.xib in Resources */,
 				A02E64692BFF2715004526EA /* CoffeeCategoryCell.xib in Resources */,
 				A02E646D2BFF2715004526EA /* Main.storyboard in Resources */,
+				A0FD7F742C34210500896E0C /* SideMenuCells.xib in Resources */,
 				A00B35EE2BFF1C0B008B9A63 /* GoogleService-Info.plist in Resources */,
 				A029A3212BFF2E45002123F1 /* Assets.xcassets in Resources */,
 			);
@@ -417,6 +427,7 @@
 				A02E64452BFF2475004526EA /* HomeScreenViewModel.swift in Sources */,
 				A02E646E2BFF2715004526EA /* CoffeeMenuCells.swift in Sources */,
 				A02E64572BFF25AD004526EA /* ViewController.swift in Sources */,
+				A0FD7F702C33DA9800896E0C /* SideMenuViewController.swift in Sources */,
 				A0FF70102C2A9982000D2A39 /* AdsScreenViewController.swift in Sources */,
 				A06E90372BFF1707004A1097 /* AppDelegate.swift in Sources */,
 				A02E646A2BFF2715004526EA /* CoffeeCategoryCell.swift in Sources */,
@@ -440,6 +451,7 @@
 				A0FCE54F2C3283F9009F6DFF /* MessageDataModel.swift in Sources */,
 				A02E64522BFF25AD004526EA /* AddProductViewController.swift in Sources */,
 				A02E64492BFF2525004526EA /* TokenModel.swift in Sources */,
+				A0FD7F732C34210500896E0C /* SideMenuCells.swift in Sources */,
 				A02E64472BFF2475004526EA /* ImagePickerViewModel.swift in Sources */,
 				A02E643D2BFF2461004526EA /* LoginModel.swift in Sources */,
 				A06E90392BFF1708004A1097 /* SceneDelegate.swift in Sources */,

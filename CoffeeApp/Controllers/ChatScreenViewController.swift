@@ -40,7 +40,7 @@ class ChatScreenViewController: UIViewController,UITableViewDelegate,UITableView
     @IBAction func sendBtnPressed(_ sender: UIButton) {
         if messageBoxTextView.text != "" &&  messageBoxTextView.text != nil
         {
-            let time = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
+            //let time = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
             viewModel.sendMessages(messageBoxTextView.text)
         }
         messageBoxTextView.text = ""
