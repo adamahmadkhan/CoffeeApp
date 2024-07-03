@@ -32,12 +32,14 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLa
     var hudProgress: JGProgressHUD?
     var viewModel = HomeScreenViewModel()
     let connectivity: Connectivity = Connectivity()
+    var sideMenu: SideMenuNavigationController?
     
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         readyController()
+        
     }
     
     
@@ -61,15 +63,16 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     
     @IBAction func openSlideMenuBtnClicked(_ sender: UIButton) {
-        let sideMenu = self.storyboard?.instantiateViewController(withIdentifier: "sideMenuNavigator") as! SideMenuNavigationController
 //        sideMenu.modalTransitionStyle = .crossDissolve
 //        sideMenu.modalPresentationStyle = .overFullScreen
-        present(sideMenu, animated: true)
+        present(sideMenu!, animated: true)
 //        sideMenu.onDismissedClosure = {
 //            self.dismiss(animated: true)
 //        }
         
     }
+    
+ 
     
     
     
@@ -123,7 +126,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLa
                 cell.imageOutlet.kf.indicatorType = .activity
                 cell.imageOutlet.kf.setImage(with: URL(string: cellData.image!))
                 cell.subtitle.text = "Default"
-                
                 return  cell
             }
         }
@@ -140,16 +142,13 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
     
     //MARK: User Define Functions
-    
     func readyController(){
         topBarImageView.layer.cornerRadius = 20
         self.coffeeCategoryCvOutlet.register(UINib(nibName: "CoffeeCategoryCell", bundle: nil), forCellWithReuseIdentifier: "coffeeCategoryCell")
         self.coffeeMenuCVOutlet.register(UINib(nibName: "CoffeeMenuCells", bundle: nil), forCellWithReuseIdentifier: "coffeMenuCell")
         bindingFunctions()
         viewModel.getAllProducts()
-        
-        
-        
+        readySideMenu()
         connectivity.isPollingEnabled = true
         connectivity.pollingInterval = 5
         configureConnectivityNotifier()
@@ -185,5 +184,15 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLa
                 print("hello")
             }
         }
+    func readySideMenu(){
+        let sideMenuViewController = self.storyboard?.instantiateViewController(withIdentifier: "sideMenuViewController") as! SideMenuViewController
+        sideMenu = SideMenuNavigationController(rootViewController: sideMenuViewController)
+        sideMenu!.leftSide = true
+        sideMenu!.presentationStyle = .menuSlideIn
+        sideMenu!.menuWidth = UIScreen.main.bounds.width  * 0.80
+        sideMenuViewController.onDismissedClosure = {
+            self.dismiss(animated: true)
+        }
+    }
   
 }

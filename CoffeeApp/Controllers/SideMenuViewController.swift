@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SideMenuViewController: UIViewController,UITabBarDelegate,UITableViewDataSource {
+class SideMenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
    
     
 
@@ -24,6 +24,7 @@ class SideMenuViewController: UIViewController,UITabBarDelegate,UITableViewDataS
     }
     
     @IBAction func onCloseBtnClicked(_ sender: UIButton) {
+        print("Closed")
         guard let _ = onDismissedClosure else { return }
         onDismissedClosure!()
     }
@@ -34,6 +35,9 @@ class SideMenuViewController: UIViewController,UITabBarDelegate,UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sideMenu", for: indexPath) as! SideMenuCells
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
     
     /*
