@@ -14,6 +14,7 @@ import SkeletonView
 import Kingfisher
 import SDWebImage
 import Connectivity
+import SideMenu
 
 
 class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -60,13 +61,13 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLa
     
     
     @IBAction func openSlideMenuBtnClicked(_ sender: UIButton) {
-        let sideMenu = self.storyboard?.instantiateViewController(withIdentifier: "sideMenu") as! SideMenuViewController
-        sideMenu.modalTransitionStyle = .crossDissolve
-        sideMenu.modalPresentationStyle = .overFullScreen
+        let sideMenu = self.storyboard?.instantiateViewController(withIdentifier: "sideMenuNavigator") as! SideMenuNavigationController
+//        sideMenu.modalTransitionStyle = .crossDissolve
+//        sideMenu.modalPresentationStyle = .overFullScreen
         present(sideMenu, animated: true)
-        sideMenu.onDismissedClosure = {
-            self.dismiss(animated: true)
-        }
+//        sideMenu.onDismissedClosure = {
+//            self.dismiss(animated: true)
+//        }
         
     }
     
