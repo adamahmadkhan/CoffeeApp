@@ -31,13 +31,21 @@
                                             <constraint firstAttribute="width" constant="10" id="mnK-2N-LVf"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCB-gu-Jpe">
+                                        <rect key="frame" x="104" y="114.5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="6Zm-Uh-Wfm"/>
+                                    <constraint firstItem="vCB-gu-Jpe" firstAttribute="centerX" secondItem="FF5-bV-Dyu" secondAttribute="centerX" id="A5P-6S-Rfn"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1fv-wM-PK2" secondAttribute="trailing" id="ccc-e7-XBa"/>
                                     <constraint firstItem="1fv-wM-PK2" firstAttribute="top" secondItem="FF5-bV-Dyu" secondAttribute="top" id="nju-uB-NR5"/>
                                     <constraint firstAttribute="bottom" secondItem="1fv-wM-PK2" secondAttribute="bottom" id="oSL-hb-sCy"/>
+                                    <constraint firstItem="vCB-gu-Jpe" firstAttribute="centerY" secondItem="FF5-bV-Dyu" secondAttribute="centerY" id="s7v-09-CpH"/>
                                     <constraint firstAttribute="height" constant="250" id="vId-1O-lBh"/>
                                     <constraint firstItem="1fv-wM-PK2" firstAttribute="leading" secondItem="FF5-bV-Dyu" secondAttribute="leading" id="wgf-g6-7ZQ"/>
                                 </constraints>
@@ -91,6 +99,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="decimalBarValueLabel" destination="vCB-gu-Jpe" id="UfL-Ih-awN"/>
                         <outlet property="gestureViewOutlet" destination="taI-eB-Fkr" id="xef-0w-d8d"/>
                         <outlet property="progressViewBackground" destination="FF5-bV-Dyu" id="eHn-iB-JVh"/>
                         <outlet property="progressViewValue" destination="mnK-2N-LVf" id="mFh-hh-3qZ"/>
@@ -116,7 +125,7 @@
     <resources>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

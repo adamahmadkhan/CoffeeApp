@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController,UITextFieldDelegate,UIGestureRecognizerDelegate  {
     
     
+    @IBOutlet weak var decimalBarValueLabel: UILabel!
     @IBOutlet weak var gestureViewOutlet: UIView!
     @IBOutlet weak var updateProgressValue: UITextField!
     @IBOutlet weak var silderOutlet: UISlider!
@@ -17,7 +18,13 @@ class ViewController: UIViewController,UITextFieldDelegate,UIGestureRecognizerDe
     @IBOutlet weak var progressViewBackground: UIView!
     let progressLayer = CAShapeLayer()
     let backgroundLayer = CAShapeLayer()
-    var currentProgressValue:Float = 0.0
+    var currentProgressValue:Float = 0.0 {
+        didSet {
+            UILabel.animate(withDuration: 0.5) { [self] in
+                decimalBarValueLabel.text = "\(currentProgressValue)"
+            }
+        }
+    }
     let animation = CABasicAnimation(keyPath: "strokeEnd")
     
     
@@ -41,6 +48,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIGestureRecognizerDe
         
         
         updateProgressValue.text = "10"
+        
         progressLayer.strokeEnd = 0.10
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut) // Smooth animation curve
         animation.fillMode = CAMediaTimingFillMode.both
@@ -114,7 +122,10 @@ class ViewController: UIViewController,UITextFieldDelegate,UIGestureRecognizerDe
                 print(view.center,"Left",superview.frame.minX)
             }
             else {
-                view.center = CGPoint(x: newX, y: newY)
+                UIView.animate(withDuration: 0.1) {
+                    view.center = CGPoint(x: newX, y: newY)
+                }
+               
             }
         }
         
