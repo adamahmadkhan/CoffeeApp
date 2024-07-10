@@ -48,7 +48,6 @@
 		A00B36442BFF219D008B9A63 /* EasyStash in Frameworks */ = {isa = PBXBuildFile; productRef = A00B36432BFF219D008B9A63 /* EasyStash */; };
 		A01425E22C07004100D8AF15 /* Connectivity in Frameworks */ = {isa = PBXBuildFile; productRef = A01425E12C07004100D8AF15 /* Connectivity */; };
 		A02299012C35360B00B71203 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = A02299002C35360B00B71203 /* SideMenu */; };
-		A029A3212BFF2E45002123F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A029A3202BFF2E45002123F1 /* Assets.xcassets */; };
 		A02E643D2BFF2461004526EA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E643B2BFF2461004526EA /* LoginModel.swift */; };
 		A02E643E2BFF2461004526EA /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E643C2BFF2461004526EA /* ProductModel.swift */; };
 		A02E64442BFF2475004526EA /* AuthScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E64402BFF2475004526EA /* AuthScreenViewModel.swift */; };
@@ -77,6 +76,7 @@
 		A06E90392BFF1708004A1097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E90382BFF1708004A1097 /* SceneDelegate.swift */; };
 		A06E90412BFF1708004A1097 /* CoffeeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A06E903F2BFF1708004A1097 /* CoffeeApp.xcdatamodeld */; };
 		A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06E90442BFF170A004A1097 /* LaunchScreen.storyboard */; };
+		A0BE575A2C3E6786008C61F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0BE57592C3E6786008C61F6 /* Assets.xcassets */; };
 		A0CBB22B2C09E0F7006853AB /* ChatScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CBB22A2C09E0F7006853AB /* ChatScreenViewController.swift */; };
 		A0F6C6A42C2567D70070F143 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A0F6C6A32C2567D70070F143 /* GoogleMobileAds */; };
 		A0F6C6A92C25AE160070F143 /* GoogleAdsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F6C6A72C25AE160070F143 /* GoogleAdsCells.swift */; };
@@ -97,7 +97,6 @@
 		A00B36352BFF1F80008B9A63 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A00B36372BFF1F86008B9A63 /* DynamicType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicType.swift; sourceTree = "<group>"; };
 		A00B36392BFF1F8B008B9A63 /* ApplicationSessionMannager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSessionMannager.swift; sourceTree = "<group>"; };
-		A029A3202BFF2E45002123F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Desktop/Assets.xcassets; sourceTree = "<group>"; };
 		A02E643B2BFF2461004526EA /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		A02E643C2BFF2461004526EA /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		A02E64402BFF2475004526EA /* AuthScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthScreenViewModel.swift; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		A06E90402BFF1708004A1097 /* CoffeeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoffeeApp.xcdatamodel; sourceTree = "<group>"; };
 		A06E90452BFF170A004A1097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A06E90472BFF170A004A1097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0BE57592C3E6786008C61F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SupportingClasses/Assets.xcassets; sourceTree = "<group>"; };
 		A0CBB22A2C09E0F7006853AB /* ChatScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenViewController.swift; sourceTree = "<group>"; };
 		A0F6C6A72C25AE160070F143 /* GoogleAdsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdsCells.swift; sourceTree = "<group>"; };
 		A0F6C6A82C25AE160070F143 /* GoogleAdsCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoogleAdsCells.xib; sourceTree = "<group>"; };
@@ -288,8 +288,8 @@
 				A02E643A2BFF243D004526EA /* Model */,
 				A00B36342BFF1F54008B9A63 /* SupportingClasses */,
 				A06E90472BFF170A004A1097 /* Info.plist */,
+				A0BE57592C3E6786008C61F6 /* Assets.xcassets */,
 				A06E903F2BFF1708004A1097 /* CoffeeApp.xcdatamodeld */,
-				A029A3202BFF2E45002123F1 /* Assets.xcassets */,
 				A00B35EC2BFF1C0B008B9A63 /* GoogleService-Info.plist */,
 			);
 			path = CoffeeApp;
@@ -410,6 +410,7 @@
 			files = (
 				A02E646C2BFF2715004526EA /* ImageLoaderCell.xib in Resources */,
 				A0FBD1D02C09D67F005CF973 /* MessageTvCell.xib in Resources */,
+				A0BE575A2C3E6786008C61F6 /* Assets.xcassets in Resources */,
 				A0F6C6AA2C25AE160070F143 /* GoogleAdsCells.xib in Resources */,
 				A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */,
 				A02E646F2BFF2715004526EA /* CoffeeMenuCells.xib in Resources */,
@@ -417,7 +418,6 @@
 				A02E646D2BFF2715004526EA /* Main.storyboard in Resources */,
 				A0FD7F742C34210500896E0C /* SideMenuCells.xib in Resources */,
 				A00B35EE2BFF1C0B008B9A63 /* GoogleService-Info.plist in Resources */,
-				A029A3212BFF2E45002123F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

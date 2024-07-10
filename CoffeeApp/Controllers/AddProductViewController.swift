@@ -117,6 +117,7 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
         viewModel.productName = nameTfOutlet.text
         viewModel.productDescription = descriptionTextView.text
         viewModel.productPrice = priceTfOutlet.text
+        
     }
     func loadAd() async {
         do {
