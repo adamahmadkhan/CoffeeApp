@@ -120,14 +120,10 @@
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AX4-i5-NTQ">
                                     <size key="itemSize" width="374" height="156"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="50" height="165"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fyV-GM-yfy">
-                                    <rect key="frame" x="0.0" y="10" width="374" height="165"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="7n7-PQ-CEw" id="Ute-Wb-q94"/>
                                     <outlet property="delegate" destination="7n7-PQ-CEw" id="D13-JO-RT8"/>
@@ -621,6 +617,16 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Native"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h00-Bi-3Qj">
+                                <rect key="frame" x="127.5" y="608" width="159" height="35"/>
+                                <color key="backgroundColor" red="0.3265929494" green="0.9124876005" blue="0.34901960780000002" alpha="0.80516021110000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Core Data Screen"/>
+                                <connections>
+                                    <action selector="onCoreDataScreenClicked:" destination="faU-Be-NZ6" eventType="touchUpInside" id="KRg-GA-T3j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rqt-er-jro"/>
                         <color key="backgroundColor" name="screenBackGroundColor"/>
@@ -628,9 +634,11 @@
                             <constraint firstItem="XZv-0c-jcO" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="0Qp-AI-K9n"/>
                             <constraint firstItem="hBj-XX-qTf" firstAttribute="centerY" secondItem="4iD-1S-iiY" secondAttribute="centerY" id="2Tp-tQ-I9H"/>
                             <constraint firstItem="THg-je-a2a" firstAttribute="top" secondItem="hBj-XX-qTf" secondAttribute="bottom" constant="20" id="CyU-qg-mqT"/>
+                            <constraint firstItem="h00-Bi-3Qj" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="Dam-Cl-TLv"/>
                             <constraint firstItem="THg-je-a2a" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="GEF-xP-NyA"/>
                             <constraint firstItem="hBj-XX-qTf" firstAttribute="top" secondItem="XZv-0c-jcO" secondAttribute="bottom" constant="20" id="NGM-j6-wwY"/>
                             <constraint firstItem="gXq-4C-D9m" firstAttribute="height" secondItem="XZv-0c-jcO" secondAttribute="height" multiplier="0.875" id="Sp2-g9-KZS"/>
+                            <constraint firstItem="h00-Bi-3Qj" firstAttribute="top" secondItem="zYp-YQ-gMC" secondAttribute="bottom" constant="20" id="Ziy-YA-war"/>
                             <constraint firstItem="gXq-4C-D9m" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="a1C-Cq-qLh"/>
                             <constraint firstItem="zYp-YQ-gMC" firstAttribute="centerX" secondItem="4iD-1S-iiY" secondAttribute="centerX" id="a5S-H1-tmQ"/>
                             <constraint firstItem="zYp-YQ-gMC" firstAttribute="top" secondItem="THg-je-a2a" secondAttribute="bottom" constant="20" id="g0q-ng-BH1"/>
@@ -644,6 +652,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kE4-xz-Ygk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6025" y="940"/>
+        </scene>
+        <!--Core Data Home Screen View Controller-->
+        <scene sceneID="6PP-np-8SP">
+            <objects>
+                <viewController storyboardIdentifier="CoreDataHomeScreen" id="ScF-I4-Ukf" customClass="CoreDataHomeScreenViewController" customModule="CoffeeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c2a-q0-LWB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-4a-KR2">
+                                <rect key="frame" x="20" y="48" width="89" height="35"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.left.fill" catalog="system" title="Back"/>
+                                <connections>
+                                    <action selector="onBackClicked:" destination="ScF-I4-Ukf" eventType="touchUpInside" id="CiY-lg-kHA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jYu-0q-37h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KJO-4a-KR2" firstAttribute="top" secondItem="jYu-0q-37h" secondAttribute="top" id="FHr-5J-WCq"/>
+                            <constraint firstItem="KJO-4a-KR2" firstAttribute="leading" secondItem="jYu-0q-37h" secondAttribute="leading" constant="20" id="QRF-O0-0aU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8p-jt-pwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7322" y="915"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="nNt-Zw-6b1">
@@ -1000,6 +1038,7 @@
         <image name="Screenshot 2024-04-16 at 12.43.13 PM" width="940" height="1504"/>
         <image name="Screenshot 2024-04-16 at 4.51.02 PM" width="1314" height="566"/>
         <image name="Screenshot 2024-04-17 at 11.03.29 AM" width="346" height="282"/>
+        <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="message.fill" catalog="system" width="128" height="114"/>
@@ -1025,16 +1064,16 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

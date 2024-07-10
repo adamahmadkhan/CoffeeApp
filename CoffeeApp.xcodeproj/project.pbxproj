@@ -77,6 +77,7 @@
 		A06E90412BFF1708004A1097 /* CoffeeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A06E903F2BFF1708004A1097 /* CoffeeApp.xcdatamodeld */; };
 		A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06E90442BFF170A004A1097 /* LaunchScreen.storyboard */; };
 		A0BE575A2C3E6786008C61F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0BE57592C3E6786008C61F6 /* Assets.xcassets */; };
+		A0BE57602C3EA810008C61F6 /* CoreDataHomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BE575F2C3EA810008C61F6 /* CoreDataHomeScreenViewController.swift */; };
 		A0CBB22B2C09E0F7006853AB /* ChatScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CBB22A2C09E0F7006853AB /* ChatScreenViewController.swift */; };
 		A0F6C6A42C2567D70070F143 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A0F6C6A32C2567D70070F143 /* GoogleMobileAds */; };
 		A0F6C6A92C25AE160070F143 /* GoogleAdsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F6C6A72C25AE160070F143 /* GoogleAdsCells.swift */; };
@@ -125,6 +126,7 @@
 		A06E90452BFF170A004A1097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A06E90472BFF170A004A1097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0BE57592C3E6786008C61F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SupportingClasses/Assets.xcassets; sourceTree = "<group>"; };
+		A0BE575F2C3EA810008C61F6 /* CoreDataHomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHomeScreenViewController.swift; sourceTree = "<group>"; };
 		A0CBB22A2C09E0F7006853AB /* ChatScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenViewController.swift; sourceTree = "<group>"; };
 		A0F6C6A72C25AE160070F143 /* GoogleAdsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdsCells.swift; sourceTree = "<group>"; };
 		A0F6C6A82C25AE160070F143 /* GoogleAdsCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoogleAdsCells.xib; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				A0CBB22A2C09E0F7006853AB /* ChatScreenViewController.swift */,
 				A0FF700F2C2A9982000D2A39 /* AdsScreenViewController.swift */,
 				A0FD7F6F2C33DA9800896E0C /* SideMenuViewController.swift */,
+				A0BE575F2C3EA810008C61F6 /* CoreDataHomeScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				A02E64522BFF25AD004526EA /* AddProductViewController.swift in Sources */,
 				A02E64492BFF2525004526EA /* TokenModel.swift in Sources */,
 				A0FD7F732C34210500896E0C /* SideMenuCells.swift in Sources */,
+				A0BE57602C3EA810008C61F6 /* CoreDataHomeScreenViewController.swift in Sources */,
 				A02E64472BFF2475004526EA /* ImagePickerViewModel.swift in Sources */,
 				A02E643D2BFF2461004526EA /* LoginModel.swift in Sources */,
 				A06E90392BFF1708004A1097 /* SceneDelegate.swift in Sources */,

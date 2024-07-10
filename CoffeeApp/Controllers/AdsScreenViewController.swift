@@ -171,6 +171,10 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     
     
     
+    @IBAction func onCoreDataScreenClicked(_ sender: UIButton) {
+        let coreDataHomeScreenController = self.storyboard?.instantiateViewController(identifier: "CoreDataHomeScreen") as! CoreDataHomeScreenViewController
+        self.navigationController?.pushViewController( coreDataHomeScreenController, animated: true)
+    }
     
     
     func loadAdoptiveAd(){
