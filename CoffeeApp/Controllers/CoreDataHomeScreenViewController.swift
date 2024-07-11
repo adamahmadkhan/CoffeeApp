@@ -7,12 +7,24 @@
 
 import UIKit
 
-class CoreDataHomeScreenViewController: UIViewController {
-
+class CoreDataHomeScreenViewController: UIViewController,UITextFieldDelegate {
+    
+    
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        emailTextField.delegate = self
+        
     }
     
     @IBAction func onBackClicked(_ sender: UIButton) {

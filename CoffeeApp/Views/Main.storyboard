@@ -670,18 +670,59 @@
                                     <action selector="onBackClicked:" destination="ScF-I4-Ukf" eventType="touchUpInside" id="CiY-lg-kHA"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PLZ-mA-ic4">
+                                <rect key="frame" x="20" y="163" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="85X-ok-eIE">
+                                <rect key="frame" x="20" y="227" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRo-hv-68f">
+                                <rect key="frame" x="20" y="291" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUP-4O-20L">
+                                <rect key="frame" x="157" y="375" width="100" height="35"/>
+                                <color key="backgroundColor" red="0.9193766713" green="0.3028941751" blue="0.2391715348" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9Ys-le-aDn"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="create"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jYu-0q-37h"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="screenBackGroundColor"/>
                         <constraints>
+                            <constraint firstItem="jYu-0q-37h" firstAttribute="trailing" secondItem="PLZ-mA-ic4" secondAttribute="trailing" constant="20" id="24c-hp-HbV"/>
+                            <constraint firstItem="PLZ-mA-ic4" firstAttribute="top" secondItem="KJO-4a-KR2" secondAttribute="bottom" constant="80" id="BSt-5x-YjR"/>
                             <constraint firstItem="KJO-4a-KR2" firstAttribute="top" secondItem="jYu-0q-37h" secondAttribute="top" id="FHr-5J-WCq"/>
                             <constraint firstItem="KJO-4a-KR2" firstAttribute="leading" secondItem="jYu-0q-37h" secondAttribute="leading" constant="20" id="QRF-O0-0aU"/>
+                            <constraint firstItem="jYu-0q-37h" firstAttribute="trailing" secondItem="85X-ok-eIE" secondAttribute="trailing" constant="20" id="TcB-2t-lFZ"/>
+                            <constraint firstItem="85X-ok-eIE" firstAttribute="leading" secondItem="jYu-0q-37h" secondAttribute="leading" constant="20" id="ZT3-pf-c3J"/>
+                            <constraint firstItem="fRo-hv-68f" firstAttribute="leading" secondItem="jYu-0q-37h" secondAttribute="leading" constant="20" id="a2w-xt-y9g"/>
+                            <constraint firstItem="PLZ-mA-ic4" firstAttribute="leading" secondItem="jYu-0q-37h" secondAttribute="leading" constant="20" id="eiq-Vb-YYe"/>
+                            <constraint firstItem="sUP-4O-20L" firstAttribute="centerX" secondItem="c2a-q0-LWB" secondAttribute="centerX" id="qqh-eo-gFf"/>
+                            <constraint firstItem="85X-ok-eIE" firstAttribute="top" secondItem="PLZ-mA-ic4" secondAttribute="bottom" constant="30" id="sNC-XI-IYw"/>
+                            <constraint firstItem="jYu-0q-37h" firstAttribute="trailing" secondItem="fRo-hv-68f" secondAttribute="trailing" constant="20" id="y5G-0P-edr"/>
+                            <constraint firstItem="sUP-4O-20L" firstAttribute="top" secondItem="fRo-hv-68f" secondAttribute="bottom" constant="50" id="yZ1-3P-5gC"/>
+                            <constraint firstItem="fRo-hv-68f" firstAttribute="top" secondItem="85X-ok-eIE" secondAttribute="bottom" constant="30" id="zad-St-a3J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="fRo-hv-68f" id="9Bz-uZ-upu"/>
+                        <outlet property="passwordTextField" destination="85X-ok-eIE" id="Tpx-yJ-6i9"/>
+                        <outlet property="usernameTextField" destination="PLZ-mA-ic4" id="8W2-ay-goy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8p-jt-pwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7322" y="915"/>
+            <point key="canvasLocation" x="7321.739130434783" y="914.73214285714278"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="nNt-Zw-6b1">
@@ -1008,7 +1049,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckz-Jn-dzH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4077" y="71"/>
+            <point key="canvasLocation" x="4077" y="68"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="w1P-xg-SD9">

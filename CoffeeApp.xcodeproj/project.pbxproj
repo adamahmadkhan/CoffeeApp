@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A001BD7B2C085261000EA8AC /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001BD7A2C085261000EA8AC /* Observers.swift */; };
+		A00A06042C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A00A06022C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld */; };
 		A00B35EE2BFF1C0B008B9A63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00B35EC2BFF1C0B008B9A63 /* GoogleService-Info.plist */; };
 		A00B35F22BFF1E35008B9A63 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A00B35F12BFF1E35008B9A63 /* FirebaseAnalytics */; };
 		A00B35F42BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A00B35F32BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -94,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		A001BD7A2C085261000EA8AC /* Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observers.swift; sourceTree = "<group>"; };
+		A00A06032C3FB1CC003DB705 /* LoginCredentials.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoginCredentials.xcdatamodel; sourceTree = "<group>"; };
 		A00B35EC2BFF1C0B008B9A63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A00B36352BFF1F80008B9A63 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A00B36372BFF1F86008B9A63 /* DynamicType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicType.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				A00B36392BFF1F8B008B9A63 /* ApplicationSessionMannager.swift */,
 				A00B36372BFF1F86008B9A63 /* DynamicType.swift */,
 				A001BD7A2C085261000EA8AC /* Observers.swift */,
+				A00A06022C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld */,
 			);
 			path = SupportingClasses;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				A02E64522BFF25AD004526EA /* AddProductViewController.swift in Sources */,
 				A02E64492BFF2525004526EA /* TokenModel.swift in Sources */,
 				A0FD7F732C34210500896E0C /* SideMenuCells.swift in Sources */,
+				A00A06042C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld in Sources */,
 				A0BE57602C3EA810008C61F6 /* CoreDataHomeScreenViewController.swift in Sources */,
 				A02E64472BFF2475004526EA /* ImagePickerViewModel.swift in Sources */,
 				A02E643D2BFF2461004526EA /* LoginModel.swift in Sources */,
@@ -984,6 +988,16 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
+		A00A06022C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A00A06032C3FB1CC003DB705 /* LoginCredentials.xcdatamodel */,
+			);
+			currentVersion = A00A06032C3FB1CC003DB705 /* LoginCredentials.xcdatamodel */;
+			path = LoginCredentials.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		A06E903F2BFF1708004A1097 /* CoffeeApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
