@@ -69,7 +69,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegateFlowLa
 //        sideMenu.onDismissedClosure = {
 //            self.dismiss(animated: true)
 //        }
-        
     }
     
  

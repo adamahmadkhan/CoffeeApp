@@ -15,6 +15,7 @@ class CoreDataHomeScreenViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var loginErrorLabel: UILabel!
     
     
     

@@ -50,7 +50,7 @@ class AddProductViewController: UIViewController, UITextViewDelegate,UITextField
  
     //MARK: Buttons calls
     @IBAction func addProductPressed(_ sender: UIButton) {
-        if let data = uploadedImage.image!.pngData() {
+        if let data = uploadedImage.image?.pngData() {
             viewModel.addCloudData(imageData: data)
             viewModel.getAllProducts { error, products in
                 if error == nil {

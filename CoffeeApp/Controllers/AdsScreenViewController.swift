@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMobileAds
 
+
 class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, GADBannerViewDelegate {
     
     
@@ -87,13 +88,8 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     }
     
     
-    
-    
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        
-        
     }
-    
     
     
     @IBAction func videoInterstitialBtnPressed(_ sender: Any) {
@@ -118,15 +114,16 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
         //showOpenAd()
     }
     
-    func collapableBannerAds(){
-        
+  
+    
+    @IBAction func onCountryListClicked(_ sender: UIButton) {
+        let countryScreenController = self.storyboard?.instantiateViewController(identifier: "countryListViewController") as! CountryListViewController
+        self.navigationController?.pushViewController(countryScreenController, animated: true)
     }
     
     
     
-    
     func adaptiveBannerAd(){
-        
         let adaptiveSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(view.frame.inset(by: view.safeAreaInsets).width)
         
         adaptiveBannerView = GADBannerView(adSize: adaptiveSize)

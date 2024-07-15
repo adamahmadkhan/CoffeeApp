@@ -1,0 +1,927 @@
+{
+  "SM" : {
+    "name" : "San Marino",
+    "diallingCode" : "+378"
+  },
+  "VI" : {
+    "name" : "U.S. Virgin Islands",
+    "diallingCode" : "+1340"
+  },
+  "MX" : {
+    "name" : "Mexico",
+    "diallingCode" : "+52"
+  },
+  "PS" : {
+    "name" : "Palestine",
+    "diallingCode" : "+970"
+  },
+  "BQ" : {
+    "name" : "Netherlands Antilles",
+    "diallingCode" : "+599"
+  },
+  "SN" : {
+    "name" : "Senegal",
+    "diallingCode" : "+221"
+  },
+  "MY" : {
+    "name" : "Malaysia",
+    "diallingCode" : "+60"
+  },
+  "BR" : {
+    "name" : "Brazil",
+    "diallingCode" : "+55"
+  },
+  "PT" : {
+    "name" : "Portugal",
+    "diallingCode" : "+351"
+  },
+  "SO" : {
+    "name" : "Somalia",
+    "diallingCode" : "+252"
+  },
+  "YE" : {
+    "name" : "Yemen",
+    "diallingCode" : "+967"
+  },
+  "MZ" : {
+    "name" : "Mozambique",
+    "diallingCode" : "+258"
+  },
+  "BS" : {
+    "name" : "Bahamas",
+    "diallingCode" : "+1242"
+  },
+  "KE" : {
+    "name" : "Kenya",
+    "diallingCode" : "+254"
+  },
+  "BT" : {
+    "name" : "Bhutan",
+    "diallingCode" : "+975"
+  },
+  "PW" : {
+    "name" : "Palau",
+    "diallingCode" : "+680"
+  },
+  "HK" : {
+    "name" : "Hong Kong",
+    "diallingCode" : "+852"
+  },
+  "NA" : {
+    "name" : "Namibia",
+    "diallingCode" : "+264"
+  },
+  "SR" : {
+    "name" : "Suriname",
+    "diallingCode" : "+597"
+  },
+  "VN" : {
+    "name" : "Vietnam",
+    "diallingCode" : "+84"
+  },
+  "KG" : {
+    "name" : "Kyrgyzstan",
+    "diallingCode" : "+996"
+  },
+  "ST" : {
+    "name" : "Sao Tome and Principe",
+    "diallingCode" : "+23912"
+  },
+  "BW" : {
+    "name" : "Botswana",
+    "diallingCode" : "+267"
+  },
+  "ER" : {
+    "name" : "Eritrea",
+    "diallingCode" : "+291"
+  },
+  "KH" : {
+    "name" : "Cambodia",
+    "diallingCode" : "+855"
+  },
+  "NC" : {
+    "name" : "New Caledonia",
+    "diallingCode" : "+687"
+  },
+  "PY" : {
+    "name" : "Paraguay",
+    "diallingCode" : "+595"
+  },
+  "HN" : {
+    "name" : "Honduras",
+    "diallingCode" : "+504"
+  },
+  "KI" : {
+    "name" : "Kiribati",
+    "diallingCode" : "+686"
+  },
+  "ES" : {
+    "name" : "Spain",
+    "diallingCode" : "+34"
+  },
+  "SV" : {
+    "name" : "El Salvador",
+    "diallingCode" : "+503"
+  },
+  "BY" : {
+    "name" : "Belarus",
+    "diallingCode" : "+375"
+  },
+  "ET" : {
+    "name" : "Ethiopia",
+    "diallingCode" : "+251"
+  },
+  "NE" : {
+    "name" : "Niger",
+    "diallingCode" : "+227"
+  },
+  "BZ" : {
+    "name" : "Belize",
+    "diallingCode" : "+501"
+  },
+  "NF" : {
+    "name" : "Norfolk Island",
+    "diallingCode" : "+672"
+  },
+  "QA" : {
+    "name" : "Qatar",
+    "diallingCode" : "+974"
+  },
+  "NG" : {
+    "name" : "Nigeria",
+    "diallingCode" : "+234"
+  },
+  
+  "HR" : {
+    "name" : "Croatia",
+    "diallingCode" : "+385"
+  },
+  "CA" : {
+    "name" : "Canada",
+    "diallingCode" : "+1"
+  },
+  "KM" : {
+    "name" : "Comoros",
+    "diallingCode" : "+269"
+  },
+  "SZ" : {
+    "name" : "Swaziland",
+    "diallingCode" : "+268"
+  },
+  "KN" : {
+    "name" : "Saint Kitts and Nevis",
+    "diallingCode" : "+1869"
+  },
+  "NI" : {
+    "name" : "Nicaragua",
+    "diallingCode" : "+505"
+  },
+  "VU" : {
+    "name" : "Vanuatu",
+    "diallingCode" : "+678"
+  },
+  "HT" : {
+    "name" : "Haiti",
+    "diallingCode" : "+509"
+  },
+  "HU" : {
+    "name" : "Hungary",
+    "diallingCode" : "+36"
+  },
+  "CD" : {
+    "name" : "DR Congo",
+    "diallingCode" : "+243"
+  },
+  "KP" : {
+    "name" : "North Korea",
+    "diallingCode" : "+850"
+  },
+  "NL" : {
+    "name" : "Netherlands",
+    "diallingCode" : "+31"
+  },
+  "YT" : {
+    "name" : "Mayotte",
+    "diallingCode" : "+262"
+  },
+  "KR" : {
+    "name" : "South Korea",
+    "diallingCode" : "+82"
+  },
+  "TC" : {
+    "name" : "Turks and Caicos Islands",
+    "diallingCode" : "+1649"
+  },
+  "CF" : {
+    "name" : "Central African Republic",
+    "diallingCode" : "+236"
+  },
+  "TD" : {
+    "name" : "Chad",
+    "diallingCode" : "+235"
+  },
+  "CG" : {
+    "name" : "Congo",
+    "diallingCode" : "+242"
+  },
+  "NO" : {
+    "name" : "Norway",
+    "diallingCode" : "+47"
+  },
+  "CH" : {
+    "name" : "Switzerland",
+    "diallingCode" : "+41"
+  },
+  "TF" : {
+    "name" : "French Southern Territories",
+    "diallingCode" : "+262"
+  },
+  "CI" : {
+    "name" : "Côte d'Ivoire (Ivory Coast)",
+    "diallingCode" : "+225"
+  },
+  "NP" : {
+    "name" : "Nepal",
+    "diallingCode" : "+977"
+  },
+  "TG" : {
+    "name" : "Togo",
+    "diallingCode" : "+228"
+  },
+  "KW" : {
+    "name" : "Kuwait",
+    "diallingCode" : "+965"
+  },
+  "CK" : {
+    "name" : "Cook Islands",
+    "diallingCode" : "+682"
+  },
+  "NR" : {
+    "name" : "Nauru",
+    "diallingCode" : "+674"
+  },
+  "TH" : {
+    "name" : "Thailand",
+    "diallingCode" : "+66"
+  },
+  "CL" : {
+    "name" : "Chile",
+    "diallingCode" : "+56"
+  },
+  "KY" : {
+    "name" : "Cayman Islands",
+    "diallingCode" : "+1345"
+  },
+  "CM" : {
+    "name" : "Cameroon",
+    "diallingCode" : "+237"
+  },
+  "TJ" : {
+    "name" : "Tajikistan",
+    "diallingCode" : "+992"
+  },
+  "KZ" : {
+    "name" : "Kazakhstan",
+    "diallingCode" : "+7"
+  },
+  "CN" : {
+    "name" : "China",
+    "diallingCode" : "+86"
+  },
+  "WF" : {
+    "name" : "Wallis and Futuna",
+    "diallingCode" : "+681"
+  },
+  "FI" : {
+    "name" : "Finland",
+    "diallingCode" : "+358"
+  },
+  "ID" : {
+    "name" : "Indonesia",
+    "diallingCode" : "+62"
+  },
+  "NU" : {
+    "name" : "Niue",
+    "diallingCode" : "+683"
+  },
+  "CO" : {
+    "name" : "Colombia",
+    "diallingCode" : "+57"
+  },
+  "FJ" : {
+    "name" : "Fiji",
+    "diallingCode" : "+679"
+  },
+  "IE" : {
+    "name" : "Ireland",
+    "diallingCode" : "+353"
+  },
+  "ZA" : {
+    "name" : "South Africa",
+    "diallingCode" : "+27"
+  },
+  "TL" : {
+    "name" : "Timor-Leste",
+    "diallingCode" : "+670"
+  },
+  "FK" : {
+    "name" : "Falkland Islands",
+    "diallingCode" : "+500"
+  },
+  "LA" : {
+    "name" : "Laos",
+    "diallingCode" : "+856"
+  },
+  "TK" : {
+    "name" : "Tokelau",
+    "diallingCode" : "+690"
+  },
+  "TM" : {
+    "name" : "Turkmenistan",
+    "diallingCode" : "+993"
+  },
+  "TN" : {
+    "name" : "Tunisia",
+    "diallingCode" : "+216"
+  },
+  "LB" : {
+    "name" : "Lebanon",
+    "diallingCode" : "+961"
+  },
+  "TO" : {
+    "name" : "Tonga",
+    "diallingCode" : "+676"
+  },
+  "CR" : {
+    "name" : "Costa Rica",
+    "diallingCode" : "+506"
+  },
+  "FM" : {
+    "name" : "Micronesia",
+    "diallingCode" : "+691"
+  },
+  "LC" : {
+    "name" : "Saint Lucia",
+    "diallingCode" : "+1758"
+  },
+  "NZ" : {
+    "name" : "New Zealand",
+    "diallingCode" : "+64"
+  },
+  "FO" : {
+    "name" : "Faroe Islands",
+    "diallingCode" : "+298"
+  },
+  "TR" : {
+    "name" : "Turkey",
+    "diallingCode" : "+90"
+  },
+  "CU" : {
+    "name" : "Cuba",
+    "diallingCode" : "+53"
+  },
+  "CV" : {
+    "name" : "Cape Verde (Cabo Verde)",
+    "diallingCode" : "+238"
+  },
+  "IL" : {
+    "name" : "Israel",
+    "diallingCode" : "+972"
+  },
+  "TT" : {
+    "name" : "Trinidad and Tobago",
+    "diallingCode" : "+1868"
+  },
+  "FR" : {
+    "name" : "France",
+    "diallingCode" : "+33"
+  },
+  "IN" : {
+    "name" : "India",
+    "diallingCode" : "+91"
+  },
+  "LI" : {
+    "name" : "Liechtenstein",
+    "diallingCode" : "+423"
+  },
+  "TV" : {
+    "name" : "Tuvalu",
+    "diallingCode" : "+688"
+  },
+  "CY" : {
+    "name" : "Cyprus",
+    "diallingCode" : "+357"
+  },
+  "TW" : {
+    "name" : "Taiwan",
+    "diallingCode" : "+886"
+  },
+  "CZ" : {
+    "name" : "Czech Republic (Czechia)",
+    "diallingCode" : "+420"
+  },
+  "AD" : {
+    "name" : "Andorra",
+    "diallingCode" : "+376"
+  },
+  "LK" : {
+    "name" : "Sri Lanka",
+    "diallingCode" : "+94"
+  },
+  "ZM" : {
+    "name" : "Zambia",
+    "diallingCode" : "+260"
+  },
+  "WS" : {
+    "name" : "Samoa",
+    "diallingCode" : "+685"
+  },
+  "IQ" : {
+    "name" : "Iraq",
+    "diallingCode" : "+964"
+  },
+  "AE" : {
+    "name" : "United Arab Emirates",
+    "diallingCode" : "+971"
+  },
+  "AF" : {
+    "name" : "Afghanistan",
+    "diallingCode" : "+93"
+  },
+  "TZ" : {
+    "name" : "Tanzania",
+    "diallingCode" : "+255"
+  },
+  "IS" : {
+    "name" : "Iceland",
+    "diallingCode" : "+354"
+  },
+  "AG" : {
+    "name" : "Antigua and Barbuda",
+    "diallingCode" : "+1268"
+  },
+  "RE" : {
+    "name" : "Reunion",
+    "diallingCode" : "+262"
+  },
+  "IT" : {
+    "name" : "Italy",
+    "diallingCode" : "+39"
+  },
+  "UA" : {
+    "name" : "Ukraine",
+    "diallingCode" : "+380"
+  },
+  "AI" : {
+    "name" : "Anguilla",
+    "diallingCode" : "+1264"
+  },
+  "DE" : {
+    "name" : "Germany",
+    "diallingCode" : "+49"
+  },
+  "LR" : {
+    "name" : "Liberia",
+    "diallingCode" : "+231"
+  },
+  "GA" : {
+    "name" : "Gabon",
+    "diallingCode" : "+241"
+  },
+  "OM" : {
+    "name" : "Oman",
+    "diallingCode" : "+968"
+  },
+  "LS" : {
+    "name" : "Lesotho",
+    "diallingCode" : "+266"
+  },
+  "GB" : {
+    "name" : "United Kingdom",
+    "diallingCode" : "+44"
+  },
+  "AL" : {
+    "name" : "Albania",
+    "diallingCode" : "+355"
+  },
+  "LT" : {
+    "name" : "Lithuania",
+    "diallingCode" : "+370"
+  },
+  "AM" : {
+    "name" : "Armenia",
+    "diallingCode" : "+374"
+  },
+  "ZW" : {
+    "name" : "Zimbabwe",
+    "diallingCode" : "+263"
+  },
+  "LU" : {
+    "name" : "Luxembourg",
+    "diallingCode" : "+352"
+  },
+  "GD" : {
+    "name" : "Grenada",
+    "diallingCode" : "+1473"
+  },
+  "LV" : {
+    "name" : "Latvia",
+    "diallingCode" : "+371"
+  },
+  "DJ" : {
+    "name" : "Djibouti",
+    "diallingCode" : "+253"
+  },
+  "GE" : {
+    "name" : "Georgia",
+    "diallingCode" : "+995"
+  },
+  "AO" : {
+    "name" : "Angola",
+    "diallingCode" : "+244"
+  },
+  "UG" : {
+    "name" : "Uganda",
+    "diallingCode" : "+256"
+  },
+  "DK" : {
+    "name" : "Denmark",
+    "diallingCode" : "+45"
+  },
+  "GF" : {
+    "name" : "French Guiana",
+    "diallingCode" : "+594"
+  },
+  "AQ" : {
+    "name" : "Antarctica",
+    "diallingCode" : "+672"
+  },
+  "GG" : {
+    "name" : "Guernsey",
+    "diallingCode" : "+44"
+  },
+  "LY" : {
+    "name" : "Libya",
+    "diallingCode" : "+218"
+  },
+  "DM" : {
+    "name" : "Dominica",
+    "diallingCode" : "+1767"
+  },
+  "GH" : {
+    "name" : "Ghana",
+    "diallingCode" : "+233"
+  },
+  "AR" : {
+    "name" : "Argentina",
+    "diallingCode" : "+54"
+  },
+  "RO" : {
+    "name" : "Romania",
+    "diallingCode" : "+40"
+  },
+  "GI" : {
+    "name" : "Gibraltar",
+    "diallingCode" : "+350"
+  },
+  "AS" : {
+    "name" : "American Samoa",
+    "diallingCode" : "+1684"
+  },
+  "DO" : {
+    "name" : "Dominican Republic",
+    "diallingCode" : "+1809"
+  },
+  "AT" : {
+    "name" : "Austria",
+    "diallingCode" : "+43"
+  },
+  "AU" : {
+    "name" : "Australia",
+    "diallingCode" : "+61"
+  },
+  "MA" : {
+    "name" : "Morocco",
+    "diallingCode" : "+212"
+  },
+  "RS" : {
+    "name" : "Serbia",
+    "diallingCode" : "+381"
+  },
+  "GL" : {
+    "name" : "Greenland",
+    "diallingCode" : "+299"
+  },
+  "GM" : {
+    "name" : "Gambia",
+    "diallingCode" : "+220"
+  },
+  "AW" : {
+    "name" : "Aruba",
+    "diallingCode" : "+297"
+  },
+  "MC" : {
+    "name" : "Monaco",
+    "diallingCode" : "+377"
+  },
+  "RU" : {
+    "name" : "Russian Federation",
+    "diallingCode" : "+7"
+  },
+  "MD" : {
+    "name" : "Moldova",
+    "diallingCode" : "+373"
+  },
+  "GN" : {
+    "name" : "Guinea",
+    "diallingCode" : "+224"
+  },
+  "ME" : {
+    "name" : "Montenegro",
+    "diallingCode" : "+382"
+  },
+  "RW" : {
+    "name" : "Rwanda",
+    "diallingCode" : "+250"
+  },
+  "AZ" : {
+    "name" : "Azerbaijan",
+    "diallingCode" : "+994"
+  },
+  "GP" : {
+    "name" : "Guadeloupe",
+    "diallingCode" : "+590"
+  },
+  "PA" : {
+    "name" : "Panama",
+    "diallingCode" : "+507"
+  },
+  "US" : {
+    "name" : "United States of America (USA)",
+    "diallingCode" : "+1"
+  },
+  "MG" : {
+    "name" : "Madagascar",
+    "diallingCode" : "+261"
+  },
+  "GQ" : {
+    "name" : "Equatorial Guinea",
+    "diallingCode" : "+240"
+  },
+  "MH" : {
+    "name" : "Marshall Islands",
+    "diallingCode" : "+692"
+  },
+  "GR" : {
+    "name" : "Greece",
+    "diallingCode" : "+30"
+  },
+  "BA" : {
+    "name" : "Bosnia and Herzegovina",
+    "diallingCode" : "+387"
+  },
+  "JM" : {
+    "name" : "Jamaica",
+    "diallingCode" : "+1876"
+  },
+  "BB" : {
+    "name" : "Barbados",
+    "diallingCode" : "+1246"
+  },
+  "GT" : {
+    "name" : "Guatemala",
+    "diallingCode" : "+502"
+  },
+  "JO" : {
+    "name" : "Jordan",
+    "diallingCode" : "+962"
+  },
+  "PE" : {
+    "name" : "Peru",
+    "diallingCode" : "+51"
+  },
+  "MK" : {
+    "name" : "Macedonia",
+    "diallingCode" : "+389"
+  },
+  "DZ" : {
+    "name" : "Algeria",
+    "diallingCode" : "+213"
+  },
+  "PF" : {
+    "name" : "French Polynesia",
+    "diallingCode" : "+689"
+  },
+  "GU" : {
+    "name" : "Guam",
+    "diallingCode" : "+1671"
+  },
+  "BD" : {
+    "name" : "Bangladesh",
+    "diallingCode" : "+880"
+  },
+  "ML" : {
+    "name" : "Mali",
+    "diallingCode" : "+223"
+  },
+  "BE" : {
+    "name" : "Belgium",
+    "diallingCode" : "+32"
+  },
+  "JP" : {
+    "name" : "Japan",
+    "diallingCode" : "+81"
+  },
+  "PG" : {
+    "name" : "Papua New Guinea",
+    "diallingCode" : "+675"
+  },
+  "SA" : {
+    "name" : "Saudi Arabia",
+    "diallingCode" : "+966"
+  },
+  "MM" : {
+    "name" : "Myanmar",
+    "diallingCode" : "+95"
+  },
+  "GW" : {
+    "name" : "Guinea Bissau",
+    "diallingCode" : "+245"
+  },
+  "BF" : {
+    "name" : "Burkina Faso",
+    "diallingCode" : "+226"
+  },
+  "PH" : {
+    "name" : "Philippines",
+    "diallingCode" : "+63"
+  },
+  "SC" : {
+    "name" : "Seychelles",
+    "diallingCode" : "+248"
+  },
+  "MN" : {
+    "name" : "Mongolia",
+    "diallingCode" : "+976"
+  },
+  "BG" : {
+    "name" : "Bulgaria",
+    "diallingCode" : "+359"
+  },
+  "SB" : {
+    "name" : "Solomon Islands",
+    "diallingCode" : "+677"
+  },
+  "SD" : {
+    "name" : "Sudan",
+    "diallingCode" : "+249"
+  },
+  "UY" : {
+    "name" : "Uruguay",
+    "diallingCode" : "+598"
+  },
+  "MO" : {
+    "name" : "Macao",
+    "diallingCode" : "+853"
+  },
+  "EC" : {
+    "name" : "Ecuador",
+    "diallingCode" : "+593"
+  },
+  "GY" : {
+    "name" : "Guyana",
+    "diallingCode" : "+592"
+  },
+  "BH" : {
+    "name" : "Bahrain",
+    "diallingCode" : "+973"
+  },
+  "SE" : {
+    "name" : "Sweden",
+    "diallingCode" : "+46"
+  },
+  "MP" : {
+    "name" : "Northern Mariana Islands",
+    "diallingCode" : "+1670"
+  },
+  "BI" : {
+    "name" : "Burundi",
+    "diallingCode" : "+257"
+  },
+  "PK" : {
+    "name" : "Pakistan",
+    "diallingCode" : "+92"
+  },
+  "UZ" : {
+    "name" : "Uzbekistan",
+    "diallingCode" : "+998"
+  },
+  "MQ" : {
+    "name" : "Martinique",
+    "diallingCode" : "+596"
+  },
+  "EE" : {
+    "name" : "Estonia",
+    "diallingCode" : "+372"
+  },
+  "BJ" : {
+    "name" : "Benin",
+    "diallingCode" : "+229"
+  },
+  "PL" : {
+    "name" : "Poland",
+    "diallingCode" : "+48"
+  },
+  "SG" : {
+    "name" : "Singapore",
+    "diallingCode" : "+65"
+  },
+  "VC" : {
+    "name" : "Saint Vincent and the Grenadines",
+    "diallingCode" : "+1784"
+  },
+  "MR" : {
+    "name" : "Mauritania",
+    "diallingCode" : "+222"
+  },
+  "PM" : {
+    "name" : "Saint Pierre and Miquelon",
+    "diallingCode" : "+508"
+  },
+  "SH" : {
+    "name" : "Saint Helena",
+    "diallingCode" : "+290"
+  },
+  "PN" : {
+    "name" : "Pitcairn",
+    "diallingCode" : "+870"
+  },
+  "EG" : {
+    "name" : "Egypt",
+    "diallingCode" : "+20"
+  },
+  "BL" : {
+    "name" : "Saint Barthélemy",
+    "diallingCode" : "+590"
+  },
+  "MS" : {
+    "name" : "Montserrat",
+    "diallingCode" : "+1664"
+  },
+  "SI" : {
+    "name" : "Slovenia",
+    "diallingCode" : "+386"
+  },
+  "MT" : {
+    "name" : "Malta",
+    "diallingCode" : "+356"
+  },
+  "BM" : {
+    "name" : "Bermuda",
+    "diallingCode" : "+1441"
+  },
+  "VE" : {
+    "name" : "Venezuela",
+    "diallingCode" : "+58"
+  },
+  "EH" : {
+    "name" : "Western Sahara",
+    "diallingCode" : "+212"
+  },
+  "MU" : {
+    "name" : "Mauritius",
+    "diallingCode" : "+230"
+  },
+  "BN" : {
+    "name" : "Brunei Darussalam",
+    "diallingCode" : "+673"
+  },
+  "SK" : {
+    "name" : "Slovakia",
+    "diallingCode" : "+421"
+  },
+  "VG" : {
+    "name" : "British Virgin Islands",
+    "diallingCode" : "+1284"
+  },
+  "MV" : {
+    "name" : "Maldives",
+    "diallingCode" : "+960"
+  },
+  "BO" : {
+    "name" : "Bolivia",
+    "diallingCode" : "+591"
+  },
+  "SL" : {
+    "name" : "Sierra Leone",
+    "diallingCode" : "+232"
+  },
+  "MW" : {
+    "name" : "Malawi",
+    "diallingCode" : "+265"
+  },
+  "PR" : {
+    "name" : "Puerto Rico",
+    "diallingCode" : "+1"
+  }
+}

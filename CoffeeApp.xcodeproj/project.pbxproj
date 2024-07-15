@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		A001BD7B2C085261000EA8AC /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001BD7A2C085261000EA8AC /* Observers.swift */; };
 		A00A06042C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A00A06022C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld */; };
+		A00A630A2C4506100000C581 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A63092C4506100000C581 /* CountryListViewController.swift */; };
+		A00A630F2C45081F0000C581 /* CountriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A630D2C45081F0000C581 /* CountriesListTableViewCell.swift */; };
+		A00A63102C45081F0000C581 /* CountriesListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00A630E2C45081F0000C581 /* CountriesListTableViewCell.xib */; };
+		A00A63122C452AFB0000C581 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A63112C452AFB0000C581 /* CountryListViewModel.swift */; };
+		A00A63142C452BC60000C581 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A00A63132C452BC60000C581 /* countries.json */; };
+		A00A63182C452D0A0000C581 /* NetworkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A63172C452D0A0000C581 /* NetworkClass.swift */; };
+		A00A631C2C4539AB0000C581 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A631B2C4539AB0000C581 /* Countries.swift */; };
 		A00B35EE2BFF1C0B008B9A63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00B35EC2BFF1C0B008B9A63 /* GoogleService-Info.plist */; };
 		A00B35F22BFF1E35008B9A63 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A00B35F12BFF1E35008B9A63 /* FirebaseAnalytics */; };
 		A00B35F42BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A00B35F32BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -96,6 +103,13 @@
 /* Begin PBXFileReference section */
 		A001BD7A2C085261000EA8AC /* Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observers.swift; sourceTree = "<group>"; };
 		A00A06032C3FB1CC003DB705 /* LoginCredentials.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoginCredentials.xcdatamodel; sourceTree = "<group>"; };
+		A00A63092C4506100000C581 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
+		A00A630D2C45081F0000C581 /* CountriesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListTableViewCell.swift; sourceTree = "<group>"; };
+		A00A630E2C45081F0000C581 /* CountriesListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesListTableViewCell.xib; sourceTree = "<group>"; };
+		A00A63112C452AFB0000C581 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
+		A00A63132C452BC60000C581 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		A00A63172C452D0A0000C581 /* NetworkClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClass.swift; sourceTree = "<group>"; };
+		A00A631B2C4539AB0000C581 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		A00B35EC2BFF1C0B008B9A63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A00B36352BFF1F80008B9A63 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A00B36372BFF1F86008B9A63 /* DynamicType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicType.swift; sourceTree = "<group>"; };
@@ -196,6 +210,7 @@
 		A00B36342BFF1F54008B9A63 /* SupportingClasses */ = {
 			isa = PBXGroup;
 			children = (
+				A00A63132C452BC60000C581 /* countries.json */,
 				A06E90362BFF1707004A1097 /* AppDelegate.swift */,
 				A06E90382BFF1708004A1097 /* SceneDelegate.swift */,
 				A00B36352BFF1F80008B9A63 /* FirebaseManager.swift */,
@@ -214,6 +229,8 @@
 				A02E643C2BFF2461004526EA /* ProductModel.swift */,
 				A02E64482BFF2525004526EA /* TokenModel.swift */,
 				A0FCE54E2C3283F9009F6DFF /* MessageDataModel.swift */,
+				A00A63172C452D0A0000C581 /* NetworkClass.swift */,
+				A00A631B2C4539AB0000C581 /* Countries.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +243,7 @@
 				A02E64412BFF2475004526EA /* HomeScreenViewModel.swift */,
 				A02E64432BFF2475004526EA /* ImagePickerViewModel.swift */,
 				A0F6DEAF2C2D654C0061B7E2 /* ChatScreenViewModel.swift */,
+				A00A63112C452AFB0000C581 /* CountryListViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -244,6 +262,7 @@
 				A0FF700F2C2A9982000D2A39 /* AdsScreenViewController.swift */,
 				A0FD7F6F2C33DA9800896E0C /* SideMenuViewController.swift */,
 				A0BE575F2C3EA810008C61F6 /* CoreDataHomeScreenViewController.swift */,
+				A00A63092C4506100000C581 /* CountryListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,6 +284,8 @@
 				A0FBD1CE2C09D67F005CF973 /* MessageTvCell.xib */,
 				A0FD7F712C34210500896E0C /* SideMenuCells.swift */,
 				A0FD7F722C34210500896E0C /* SideMenuCells.xib */,
+				A00A630D2C45081F0000C581 /* CountriesListTableViewCell.swift */,
+				A00A630E2C45081F0000C581 /* CountriesListTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,8 +438,10 @@
 				A02E646C2BFF2715004526EA /* ImageLoaderCell.xib in Resources */,
 				A0FBD1D02C09D67F005CF973 /* MessageTvCell.xib in Resources */,
 				A0BE575A2C3E6786008C61F6 /* Assets.xcassets in Resources */,
+				A00A63102C45081F0000C581 /* CountriesListTableViewCell.xib in Resources */,
 				A0F6C6AA2C25AE160070F143 /* GoogleAdsCells.xib in Resources */,
 				A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */,
+				A00A63142C452BC60000C581 /* countries.json in Resources */,
 				A02E646F2BFF2715004526EA /* CoffeeMenuCells.xib in Resources */,
 				A02E64692BFF2715004526EA /* CoffeeCategoryCell.xib in Resources */,
 				A02E646D2BFF2715004526EA /* Main.storyboard in Resources */,
@@ -435,8 +458,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A02E64452BFF2475004526EA /* HomeScreenViewModel.swift in Sources */,
+				A00A63182C452D0A0000C581 /* NetworkClass.swift in Sources */,
 				A02E646E2BFF2715004526EA /* CoffeeMenuCells.swift in Sources */,
 				A02E64572BFF25AD004526EA /* ViewController.swift in Sources */,
+				A00A63122C452AFB0000C581 /* CountryListViewModel.swift in Sources */,
 				A0FD7F702C33DA9800896E0C /* SideMenuViewController.swift in Sources */,
 				A0FF70102C2A9982000D2A39 /* AdsScreenViewController.swift in Sources */,
 				A06E90372BFF1707004A1097 /* AppDelegate.swift in Sources */,
@@ -446,10 +471,13 @@
 				A02E64442BFF2475004526EA /* AuthScreenViewModel.swift in Sources */,
 				A00B36362BFF1F81008B9A63 /* FirebaseManager.swift in Sources */,
 				A00B36382BFF1F86008B9A63 /* DynamicType.swift in Sources */,
+				A00A630F2C45081F0000C581 /* CountriesListTableViewCell.swift in Sources */,
 				A02E64462BFF2475004526EA /* AddProductViewModel.swift in Sources */,
 				A02E64582BFF25AD004526EA /* HomeScreenViewController.swift in Sources */,
 				A0F6DEB02C2D654C0061B7E2 /* ChatScreenViewModel.swift in Sources */,
 				A001BD7B2C085261000EA8AC /* Observers.swift in Sources */,
+				A00A631C2C4539AB0000C581 /* Countries.swift in Sources */,
+				A00A630A2C4506100000C581 /* CountryListViewController.swift in Sources */,
 				A0F6C6A92C25AE160070F143 /* GoogleAdsCells.swift in Sources */,
 				A0FBD1CF2C09D67F005CF973 /* MessageTvCell.swift in Sources */,
 				A02E643E2BFF2461004526EA /* ProductModel.swift in Sources */,
