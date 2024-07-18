@@ -9,9 +9,14 @@ import UIKit
 
 class CountriesListTableViewCell: UITableViewCell {
     
+    
+    //MARK: OUTLETS
     @IBOutlet weak var countrySystemName: UILabel!
     @IBOutlet weak var codeLabel: UILabel!
     @IBOutlet weak var countryNameLabel: UILabel!
+    @IBOutlet weak var mainViewOutlet: UIView!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

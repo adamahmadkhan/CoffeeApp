@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Countries: Codable {
+struct CountriesModel: Codable {
     let countryCode: String?
     let countryDetails: CountryDetails?
 }

@@ -118,6 +118,11 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     
     @IBAction func onCountryListClicked(_ sender: UIButton) {
         let countryScreenController = self.storyboard?.instantiateViewController(identifier: "countryListViewController") as! CountryListViewController
+//        countryScreenController.transition(from: self, to: countryScreenController , duration: 2) {
+//            self.navigationController?.pushViewController(countryScreenController, animated: true)
+//        }
+        //countryScreenController.beginAppearanceTransition(true, animated: true)
+       
         self.navigationController?.pushViewController(countryScreenController, animated: true)
     }
     
@@ -125,7 +130,6 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     
     func adaptiveBannerAd(){
         let adaptiveSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(view.frame.inset(by: view.safeAreaInsets).width)
-        
         adaptiveBannerView = GADBannerView(adSize: adaptiveSize)
         adaptiveBannerView.layer.cornerRadius = 10
         addBannerViewToView(adaptiveBannerView)

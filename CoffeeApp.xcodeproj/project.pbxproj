@@ -15,7 +15,7 @@
 		A00A63122C452AFB0000C581 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A63112C452AFB0000C581 /* CountryListViewModel.swift */; };
 		A00A63142C452BC60000C581 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = A00A63132C452BC60000C581 /* countries.json */; };
 		A00A63182C452D0A0000C581 /* NetworkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A63172C452D0A0000C581 /* NetworkClass.swift */; };
-		A00A631C2C4539AB0000C581 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A631B2C4539AB0000C581 /* Countries.swift */; };
+		A00A631C2C4539AB0000C581 /* CountriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A631B2C4539AB0000C581 /* CountriesModel.swift */; };
 		A00B35EE2BFF1C0B008B9A63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00B35EC2BFF1C0B008B9A63 /* GoogleService-Info.plist */; };
 		A00B35F22BFF1E35008B9A63 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A00B35F12BFF1E35008B9A63 /* FirebaseAnalytics */; };
 		A00B35F42BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = A00B35F32BFF1E35008B9A63 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -109,7 +109,7 @@
 		A00A63112C452AFB0000C581 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
 		A00A63132C452BC60000C581 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		A00A63172C452D0A0000C581 /* NetworkClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClass.swift; sourceTree = "<group>"; };
-		A00A631B2C4539AB0000C581 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		A00A631B2C4539AB0000C581 /* CountriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModel.swift; sourceTree = "<group>"; };
 		A00B35EC2BFF1C0B008B9A63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A00B36352BFF1F80008B9A63 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A00B36372BFF1F86008B9A63 /* DynamicType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicType.swift; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 				A02E64482BFF2525004526EA /* TokenModel.swift */,
 				A0FCE54E2C3283F9009F6DFF /* MessageDataModel.swift */,
 				A00A63172C452D0A0000C581 /* NetworkClass.swift */,
-				A00A631B2C4539AB0000C581 /* Countries.swift */,
+				A00A631B2C4539AB0000C581 /* CountriesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 				A02E64582BFF25AD004526EA /* HomeScreenViewController.swift in Sources */,
 				A0F6DEB02C2D654C0061B7E2 /* ChatScreenViewModel.swift in Sources */,
 				A001BD7B2C085261000EA8AC /* Observers.swift in Sources */,
-				A00A631C2C4539AB0000C581 /* Countries.swift in Sources */,
+				A00A631C2C4539AB0000C581 /* CountriesModel.swift in Sources */,
 				A00A630A2C4506100000C581 /* CountryListViewController.swift in Sources */,
 				A0F6C6A92C25AE160070F143 /* GoogleAdsCells.swift in Sources */,
 				A0FBD1CF2C09D67F005CF973 /* MessageTvCell.swift in Sources */,

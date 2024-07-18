@@ -13,7 +13,7 @@ class CountryListViewController: UIViewController,UITableViewDelegate,UITableVie
 
     @IBOutlet weak var countriesTableViewOutlet: UITableView!
     let viewModel = CountryListViewModel()
-    var countries = [Countries]()
+    var countries = [CountriesModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class CountryListViewController: UIViewController,UITableViewDelegate,UITableVie
             countries = data
             countriesTableViewOutlet.reloadData()
         }
+        countriesTableViewOutlet.estimatedRowHeight = 150
     }
     @IBAction func onBackClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -33,14 +34,21 @@ class CountryListViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countriesListTableViewCell", for: indexPath) as! CountriesListTableViewCell
-        cell.codeLabel.text = countries[indexPath.row].countryCode
-        cell.countryNameLabel.text = countries[indexPath.row].countryDetails?.name
-        cell.countrySystemName.text = getCountryName(countryCode:  countries[indexPath.row].countryCode ?? "" )
+        let cellData = countries[indexPath.row]
+        cell.codeLabel.text = cellData.countryCode
+        cell.countryNameLabel.text = cellData.countryDetails?.name
+        cell.countrySystemName.text = viewModel.getSystemName(countryCode: cellData.countryCode ?? "")
+        cell.mainViewOutlet.backgroundColor = cell.countryNameLabel.text == cell.countrySystemName.text ? .lightGray : UIColor(red: 220/255.0, green: 90/255.0, blue: 90/255.0, alpha: 1)
         return cell
     }
-    func getCountryName(countryCode: String) -> String? {
-        let current = Locale(identifier: "en_US")
-        return current.localizedString(forRegionCode: countryCode)
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "countriesListTableViewCell") as! CountriesListTableViewCell
+        cell.codeLabel.isHidden = true
+        cell.countryNameLabel.text = "Total countries  Names \(countries.count)"
+        cell.countrySystemName.text = "Total incorrect Names \(viewModel.totalIncorrectNames)"
+        cell.mainViewOutlet.backgroundColor = .systemGray
+        return cell.contentView
     }
     /*
     // MARK: - Navigation
