@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A001BD7B2C085261000EA8AC /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001BD7A2C085261000EA8AC /* Observers.swift */; };
-		A00309192C4A79F1002C6F16 /* CustomNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00309182C4A79F1002C6F16 /* CustomNavigationDelegate.swift */; };
+		A003091B2C4A86A2002C6F16 /* CustomNavigationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A003091A2C4A86A2002C6F16 /* CustomNavigationTransition.swift */; };
 		A00A06042C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A00A06022C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld */; };
 		A00A630A2C4506100000C581 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A63092C4506100000C581 /* CountryListViewController.swift */; };
 		A00A630F2C45081F0000C581 /* CountriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A630D2C45081F0000C581 /* CountriesListTableViewCell.swift */; };
@@ -103,7 +103,7 @@
 
 /* Begin PBXFileReference section */
 		A001BD7A2C085261000EA8AC /* Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observers.swift; sourceTree = "<group>"; };
-		A00309182C4A79F1002C6F16 /* CustomNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationDelegate.swift; sourceTree = "<group>"; };
+		A003091A2C4A86A2002C6F16 /* CustomNavigationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationTransition.swift; sourceTree = "<group>"; };
 		A00A06032C3FB1CC003DB705 /* LoginCredentials.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoginCredentials.xcdatamodel; sourceTree = "<group>"; };
 		A00A63092C4506100000C581 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		A00A630D2C45081F0000C581 /* CountriesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListTableViewCell.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 				A00B36372BFF1F86008B9A63 /* DynamicType.swift */,
 				A001BD7A2C085261000EA8AC /* Observers.swift */,
 				A00A06022C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld */,
-				A00309182C4A79F1002C6F16 /* CustomNavigationDelegate.swift */,
+				A003091A2C4A86A2002C6F16 /* CustomNavigationTransition.swift */,
 			);
 			path = SupportingClasses;
 			sourceTree = "<group>";
@@ -467,7 +467,6 @@
 				A00A63122C452AFB0000C581 /* CountryListViewModel.swift in Sources */,
 				A0FD7F702C33DA9800896E0C /* SideMenuViewController.swift in Sources */,
 				A0FF70102C2A9982000D2A39 /* AdsScreenViewController.swift in Sources */,
-				A00309192C4A79F1002C6F16 /* CustomNavigationDelegate.swift in Sources */,
 				A06E90372BFF1707004A1097 /* AppDelegate.swift in Sources */,
 				A02E646A2BFF2715004526EA /* CoffeeCategoryCell.swift in Sources */,
 				A02E64532BFF25AD004526EA /* AuthScreenViewController.swift in Sources */,
@@ -495,6 +494,7 @@
 				A02E64492BFF2525004526EA /* TokenModel.swift in Sources */,
 				A0FD7F732C34210500896E0C /* SideMenuCells.swift in Sources */,
 				A00A06042C3FB1CC003DB705 /* LoginCredentials.xcdatamodeld in Sources */,
+				A003091B2C4A86A2002C6F16 /* CustomNavigationTransition.swift in Sources */,
 				A0BE57602C3EA810008C61F6 /* CoreDataHomeScreenViewController.swift in Sources */,
 				A02E64472BFF2475004526EA /* ImagePickerViewModel.swift in Sources */,
 				A02E643D2BFF2461004526EA /* LoginModel.swift in Sources */,

@@ -225,7 +225,7 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
 extension AdsScreenViewController: UINavigationControllerDelegate {
 
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let animator = CustomSpreadTransitionAnimator()
+        let animator = CustomNavigationTransition()
         animator.isPresenting = operation == .push
         return animator
     }
