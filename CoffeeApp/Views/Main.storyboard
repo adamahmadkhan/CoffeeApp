@@ -717,7 +717,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jYu-0q-37h"/>
-                        <color key="backgroundColor" name="screenBackGroundColor"/>
+                        <color key="backgroundColor" name="buttonBackGroundColor"/>
                         <constraints>
                             <constraint firstItem="jYu-0q-37h" firstAttribute="trailing" secondItem="PLZ-mA-ic4" secondAttribute="trailing" constant="20" id="24c-hp-HbV"/>
                             <constraint firstItem="PLZ-mA-ic4" firstAttribute="top" secondItem="KJO-4a-KR2" secondAttribute="bottom" constant="80" id="BSt-5x-YjR"/>
