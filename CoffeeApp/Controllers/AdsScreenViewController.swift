@@ -118,12 +118,18 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     
     @IBAction func onCountryListClicked(_ sender: UIButton) {
         let countryScreenController = self.storyboard?.instantiateViewController(identifier: "countryListViewController") as! CountryListViewController
+        
+        UIView.animate(withDuration: 4) {
+            countryScreenController.beginAppearanceTransition(true, animated: true)
+            self.navigationController?.pushViewController(countryScreenController, animated: true)
+          
+        }
+//        self.transition(from: self, to: countryScreenController, duration: 2) {
+//            //self.navigationController?.pushViewController(countryScreenController, animated: true)
+//        }
 //        countryScreenController.transition(from: self, to: countryScreenController , duration: 2) {
 //            self.navigationController?.pushViewController(countryScreenController, animated: true)
 //        }
-        //countryScreenController.beginAppearanceTransition(true, animated: true)
-       
-        self.navigationController?.pushViewController(countryScreenController, animated: true)
     }
     
     
