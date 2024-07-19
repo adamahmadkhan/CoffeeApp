@@ -29,6 +29,9 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
     
     
     override func viewDidLoad() {
+        
+        navigationController?.delegate = self
+        
         super.viewDidLoad()
         Task {
             await loadInterstitial()
@@ -114,23 +117,26 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
         //showOpenAd()
     }
     
-  
+    
     
     @IBAction func onCountryListClicked(_ sender: UIButton) {
         let countryScreenController = self.storyboard?.instantiateViewController(identifier: "countryListViewController") as! CountryListViewController
-        
-        UIView.animate(withDuration: 4) {
-            countryScreenController.beginAppearanceTransition(true, animated: true)
-            self.navigationController?.pushViewController(countryScreenController, animated: true)
-          
-        }
-//        self.transition(from: self, to: countryScreenController, duration: 2) {
-//            //self.navigationController?.pushViewController(countryScreenController, animated: true)
-//        }
-//        countryScreenController.transition(from: self, to: countryScreenController , duration: 2) {
-//            self.navigationController?.pushViewController(countryScreenController, animated: true)
-//        }
+        navigationController?.pushViewController(countryScreenController, animated: true)
+        //self.navigationController?.pushViewController(countryScreenController, animated: true)
+        //        UIView.animate(withDuration: 4) {
+        //            countryScreenController.beginAppearanceTransition(true, animated: true)
+        //            self.navigationController?.pushViewController(countryScreenController, animated: true)
+        //
+        //        }
+        //        self.transition(from: self, to: countryScreenController, duration: 2) {
+        //            //self.navigationController?.pushViewController(countryScreenController, animated: true)
+        //        }
+        //        countryScreenController.transition(from: self, to: countryScreenController , duration: 2) {
+        //            self.navigationController?.pushViewController(countryScreenController, animated: true)
+        //        }
     }
+    
+    
     
     
     
@@ -155,7 +161,7 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
                                                  multiplier: 1,
                                                  constant: 0),
                               
-                             NSLayoutConstraint(item: bannerView,
+                              NSLayoutConstraint(item: bannerView,
                                                  attribute: .centerX,
                                                  relatedBy: .equal,
                                                  toItem: view.safeAreaLayoutGuide,
@@ -215,6 +221,15 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
             print("Failed to load interstitial ad with error: \(error.localizedDescription)")
         }
     }
+}
+extension AdsScreenViewController: UINavigationControllerDelegate {
+
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let animator = CustomSpreadTransitionAnimator()
+        animator.isPresenting = operation == .push
+        return animator
+    }
+}
     
     
     /*
@@ -227,4 +242,4 @@ class AdsScreenViewController: UIViewController,  GADFullScreenContentDelegate, 
      }
      */
     
-}
+
