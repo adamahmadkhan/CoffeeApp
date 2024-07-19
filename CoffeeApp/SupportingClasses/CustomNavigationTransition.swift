@@ -29,9 +29,10 @@ class CustomNavigationTransition: NSObject, UIViewControllerAnimatedTransitionin
             toController.layer.cornerRadius = toController.frame.width / 2
             toController.layer.masksToBounds = true
             UIView.animate(withDuration: (transitionDuration(using: transitionContext)), animations: {
-               // toController.frame = CGRect(x: 0, y: fromController.bounds.midX, width: containerView.frame.width, height: containerView.frame.width)
-                toController.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
-                toController.layer.cornerRadius = 0
+                toController.frame = CGRect(x: 0, y: fromController.bounds.midX, width: containerView.frame.width, height: containerView.frame.width)
+                toController.layer.cornerRadius = toController.frame.width / 2
+                //toController.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+                //toController.layer.cornerRadius = 0
                 //toController.layer.cornerRadius = toController.frame.width / 2
 //                UIView.animate(withDuration: 0.5) {
 //                    toController.transform = CGAffineTransform(rotationAngle: CGFloat(0 * Double.pi) / 360)
@@ -53,6 +54,10 @@ class CustomNavigationTransition: NSObject, UIViewControllerAnimatedTransitionin
 //                }
                 //toController.superview?.alpha = 1
             }, completion: { _ in
+                UIView.animate(withDuration: 0.3) {
+                    toController.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
+                    toController.layer.cornerRadius = 0
+                }
                 transitionContext.completeTransition(true)
             })
 
