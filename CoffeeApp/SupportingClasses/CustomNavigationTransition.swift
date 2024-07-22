@@ -28,6 +28,8 @@ class CustomNavigationTransition: NSObject, UIViewControllerAnimatedTransitionin
             toController.frame = CGRect(x: fromController.frame.width / 2, y: fromController.frame.height / 2 , width: 50 , height: 50)
             toController.layer.cornerRadius = containerView.frame.height / 2
             toController.layer.masksToBounds = true
+            
+            
             UIView.animate(withDuration: (transitionDuration(using: transitionContext)), animations: {
                 toController.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
                 //containerView.layer.cornerRadius = 0
