@@ -81,6 +81,7 @@
 		A02E646D2BFF2715004526EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A02E64662BFF2715004526EA /* Main.storyboard */; };
 		A02E646E2BFF2715004526EA /* CoffeeMenuCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E64672BFF2715004526EA /* CoffeeMenuCells.swift */; };
 		A02E646F2BFF2715004526EA /* CoffeeMenuCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02E64682BFF2715004526EA /* CoffeeMenuCells.xib */; };
+		A0690F8C2C4FE9AE00475A26 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0690F8B2C4FE9AD00475A26 /* View.xib */; };
 		A06E90372BFF1707004A1097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E90362BFF1707004A1097 /* AppDelegate.swift */; };
 		A06E90392BFF1708004A1097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06E90382BFF1708004A1097 /* SceneDelegate.swift */; };
 		A06E90412BFF1708004A1097 /* CoffeeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A06E903F2BFF1708004A1097 /* CoffeeApp.xcdatamodeld */; };
@@ -137,6 +138,7 @@
 		A02E64662BFF2715004526EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A02E64672BFF2715004526EA /* CoffeeMenuCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeMenuCells.swift; sourceTree = "<group>"; };
 		A02E64682BFF2715004526EA /* CoffeeMenuCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoffeeMenuCells.xib; sourceTree = "<group>"; };
+		A0690F8B2C4FE9AD00475A26 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		A06E90332BFF1707004A1097 /* CoffeeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06E90362BFF1707004A1097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A06E90382BFF1708004A1097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				A0FD7F722C34210500896E0C /* SideMenuCells.xib */,
 				A00A630D2C45081F0000C581 /* CountriesListTableViewCell.swift */,
 				A00A630E2C45081F0000C581 /* CountriesListTableViewCell.xib */,
+				A0690F8B2C4FE9AD00475A26 /* View.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				A0BE575A2C3E6786008C61F6 /* Assets.xcassets in Resources */,
 				A00A63102C45081F0000C581 /* CountriesListTableViewCell.xib in Resources */,
 				A0F6C6AA2C25AE160070F143 /* GoogleAdsCells.xib in Resources */,
+				A0690F8C2C4FE9AE00475A26 /* View.xib in Resources */,
 				A06E90462BFF170A004A1097 /* LaunchScreen.storyboard in Resources */,
 				A00A63142C452BC60000C581 /* countries.json in Resources */,
 				A02E646F2BFF2715004526EA /* CoffeeMenuCells.xib in Resources */,
